@@ -1,0 +1,23 @@
+.testPage{
+    width: 1250px;
+    margin: 40px auto;
+}
+h1{
+    font-size: 36px;
+}
+
+.testPage ul{
+    width: 400px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 40px;
+    text-decoration: none;
+}
+.testPage ul li{
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}

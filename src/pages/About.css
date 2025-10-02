@@ -1,0 +1,19 @@
+.aboutUs{
+    width: 1250px;
+    margin: 0 auto;
+}
+
+.aboutUs h1{
+    font-size: 28px;
+    margin-bottom: 15px;
+    margin-top: 50px;
+}
+.aboutUs p{
+    font-size: 18px;
+}
+.aboutUs p span{
+    color: #2463EB;
+}
+.aboutUs ul li{
+    font-size: 18px;
+}

@@ -1,0 +1,83 @@
+header{
+    width: 100%;
+    background-color: #f1f5f9;
+    border-bottom: 1px solid #64748B;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px 40px 40px;
+    margin-bottom: 30px;
+}
+
+.head-left{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.navigation a{
+    color: #64748B;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: all 0.2s ease-in;
+}
+.navigation a:hover{
+    cursor: pointer;
+    font-size: 17px;
+}
+.navigation a.active{
+    color: #020817;
+    font-size: 17px;
+}
+
+.logo img{
+    width: 130px;
+    height: 110px;
+    object-fit: contain;
+    margin-left: -20px;
+}
+
+.head-right{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.head-right select{
+    width: 80px;
+    height: 40px;
+    border-radius: 6px;
+    padding: 0 3px;
+}
+.head-right button{
+    width: 120px;
+    height: 40px;
+    border-radius: 6px;
+
+    transition: all 0.3s ease-out;
+}
+.reg{
+    border: none;
+    background-color: #2463EB;
+    color: white;
+    font-size: 17px;
+}
+.login{
+    border: 1px solid #64748B;
+    background-color: white;
+    color: #020817;
+    font-size: 17px;
+}
+.head-right button:hover{
+    cursor: pointer;
+    transform: scale(0.93);
+}

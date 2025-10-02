@@ -1,0 +1,170 @@
+.sec-1{
+    width: 1300px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .secOne-left{
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+    .bilimHub{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        h1{
+            font-size: 42px;
+            letter-spacing: 0.7px;
+        }
+        p{
+            font-size: 19px;
+            letter-spacing: 1px;
+        }
+    }
+
+    .toTestBtn{
+            width: 220px;
+            height: 50px;
+            border-radius: 6px;
+            border: 1px solid #64748B;
+            color: #020817;
+            font-size: 17px;
+            font-weight: 600;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 0 0 10px;
+
+            transition: all 0.5s ease-out;
+            img{
+                width: 50px;
+                height: 50px;
+                mix-blend-mode: multiply;
+            }
+        }
+        .toTestBtn:hover{
+            width: 180px;
+            background-color: #2463EB;
+            color: white;
+            padding: 7px 14px;
+        }
+        .toTestBtn:hover img{
+            display: none;
+        }
+
+        .buklet{
+            width: 480px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            div{
+                width: 135px;
+                border-right: 1px solid #64748B;
+
+                h3{
+                    font-size: 20px;
+                }
+                p{
+                    font-size: 12px;
+                }
+            }
+
+            .div2{
+                width: 90px;
+            }
+            .div3{
+                width: 105px;
+            }
+        }
+
+    }
+
+
+    .secOne-right{
+        width: 600px;
+        background-color: white;
+        border-radius: 6px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        padding: 10px 0;
+
+        .plan{
+            width: 300px;
+            height: 50px;
+            padding: 20px;
+
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            background-color: white;
+
+            img{
+                width: 60px;
+                height: 60px;
+                object-fit: contain;
+                mix-blend-mode: multiply;
+            }
+            h2{
+                background-color: white;
+                color: #020817;
+            }
+        }
+
+        .ratingSection{
+            width: 550px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 0 auto;
+            background-color: white;
+
+            .rating{
+                width: 550px;
+                height: 50px;
+                background-color: white;
+
+                .ratingInfo{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background-color: white;
+
+                    p{
+                        font-size: 18px;
+                        background-color: white;
+                    }
+                }
+                
+                .ratingShower{
+                    width: 550px;
+                    height: 15px;
+                    border-radius: 8px;
+                    background-color: white;
+                    border: 1px solid #64748B;
+                    margin-top: 5px;
+                }
+            }   
+        }
+        .planShow{
+            width: 500px;
+            height: 40px;
+            border-radius: 8px;
+            border: none;
+            background-color: #2463EB;
+            color: white;
+            font-size: 18px;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+    }
+}

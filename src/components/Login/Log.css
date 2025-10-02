@@ -1,0 +1,62 @@
+.whiteLog{
+    width: 1220px;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.loginPage{
+    width: 500px;
+    margin: 30px auto;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    background-color: white;
+}
+.loginPage input{
+    width: 320px;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #64748B;
+    padding: 0 12px;
+    background-color: white;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+}
+.login-btn{
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+.btn1{
+    width: 120px;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid #64748B;
+    background-color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+.btn2{
+    background-color: white;
+    width: 200px;
+    height: 40px;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    padding-top: 10px;
+}
+.btn2:hover{
+    color: #2463EB;
+}

@@ -1,0 +1,110 @@
+.start-learning {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #2463EB;
+  border-radius: 20px;
+  
+}
+
+.blue-card {
+  background-color: #2463EB;
+  border-radius: 20px;
+  padding: 50px 60px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text h1 {
+    background-color: #2463EB;
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 40px;
+}
+
+.text,.text strong{
+    background-color: #2463EB;
+}
+
+.text p {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #e5f3ff;
+  background-color: #2463EB;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  background-color: #2463EB;
+}
+
+.create-btn,
+.learn-btn {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  padding: 12px 26px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.create-btn {
+  background-color: #ffffff;
+  color: #007bff;
+  border: none;
+}
+
+.learn-btn {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: white;
+}
+.learn-btn:hover,
+.create-btn:hover{
+    transform: scale(1.05);
+}
+
+.icons {
+  display: flex;
+  gap: 30px;
+  background-color: #2463EB;
+  margin-top: 160px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  color: #e0f3ff;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  background-color: #2463EB;
+  gap: 5px;
+}
+
+.icon img {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 6px;
+  background-color: #2463EB;
+}
+.icon p{
+    background-color: #2463EB;
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .blue-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .icons {
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
