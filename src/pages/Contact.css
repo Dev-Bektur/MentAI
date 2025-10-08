@@ -1,0 +1,16 @@
+.contactPage{
+    width: 1250px;
+    margin: 30px auto;
+}
+
+p{
+    font-size: 18px;
+}
+p span{
+    font-weight: 500;
+}
+p span:hover{
+    cursor: default;
+    text-decoration:  underline;
+    font-weight: 600;
+}
