@@ -1,43 +1,64 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import './Log.css'
-import { signInWithEmailAndPassword } from 'firebase/auth'
-import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify'
+import { Link, useNavigate } from 'react-router-dom'
 
 function LoginPage() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
 
-     function logIn() {
-      const res = signInWithEmailAndPassword(email, password);
-      console.log(res);
-            
-      }
-    
+  const logIn = (e) => {
+    e.preventDefault()
+
+    const storedUser = JSON.parse(localStorage.getItem('user'))
+
+    if (!storedUser) {
+      toast.error('Пользователь не найден! Сначала зарегистрируйтесь.')
+      return
+    }
+
+    // Проверяем совпадение почты и пароля
+    if (email === storedUser.email && password === storedUser.password) {
+      toast.success('Вы успешно вошли в аккаунт!')
+      setTimeout(() => {
+        navigate('/profile')
+      }, 1500)
+    } else {
+      toast.error('Данные неправильные!')
+    }
+  }
 
   return (
     <div className='whiteLog'>
-     <div className='loginPage'>
-        <div className='inputs'>
-       <input type="email" 
-      placeholder='Введите эл.почту'
-      value={email}
-          onChange={(e) => setEmail(e.target.value)}/>
+      <div className='loginPage'>
+        <h2>Вход в аккаунт</h2>
 
-      <input type="password" 
-      placeholder='Введите пароль'
-      value={password}
-          onChange={(e) => setPassword(e.target.value)} />     
+        <div className='inputs'>
+          <input
+            type="email"
+            placeholder='Введите эл. почту'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <input
+            type="password"
+            placeholder='Введите пароль'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
-      
-<div className='login-btn'>
-<button className='btn1'  onClick={logIn}>Войти</button>
-      <Link to="/register"><button className='btn2'>Еще нету аккаунта?</button> </Link>   
-</div>
-      
-    </div>    
+
+        <div className='login-btn'>
+          <button className='btn1' onClick={logIn}>Войти</button>
+          <Link to="/register">
+            <button className='btn2'>Еще нет аккаунта?</button>
+          </Link>
+        </div>
+      </div>
     </div>
-   
   )
-}     
+}
 
 export default LoginPage

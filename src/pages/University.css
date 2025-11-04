@@ -44,3 +44,7 @@
     height: 30px;
     object-fit: contain;
 }
+a{
+    text-decoration: none;
+    color: rgb(48, 48, 48);
+}

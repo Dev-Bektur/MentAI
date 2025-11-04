@@ -10,6 +10,10 @@ import Profile from "./pages/Profile";
 import Layout from "./components/Layout/Layout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import MathTest from "./pages/MathTest";
+import KyrgyzTest from "./pages/KyrgyzTest";
+import Admin from "./pages/Admin";
+import MedAcademy from "./pages/universities/MedAcademy";
 
 const myRouter = createBrowserRouter([
     {
@@ -55,6 +59,22 @@ const myRouter = createBrowserRouter([
             {
                 path: "register",
                 element: <Register/>
+            },
+            {
+                path: "math",
+                element: <MathTest/>
+            },
+            {
+                path: "kyrgyz",
+                element: <KyrgyzTest/>
+            },
+            {
+                path: "admin",
+                element:<Admin/>
+            },
+            {
+                path: "medic",
+                element: <MedAcademy/>
             }
         ]
     }

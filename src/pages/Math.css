@@ -1,0 +1,94 @@
+.testWindow{
+    width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.testCount{
+    font-size: 22px;
+    margin-bottom: 35px;
+}
+.testQuestion{
+    font-size: 19px;
+    margin-bottom: 40px;
+}
+.answers{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px auto;
+}
+.question-block{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.answers button{
+    width: 100px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    transition: all 0.3s ease-out;
+}
+.answers button:hover{
+    background-color: #a5b4fc;
+    border: none;
+}
+img{
+    width: 900px;
+    height: 1000px;
+}
+.navigation button{
+    width: 120px;
+    height: 40px;
+    border: 1px solid gray;
+    margin-top: 50px;
+    border-radius: 6px;
+}
+.selected{
+    background-color: #95a5f5;
+    border: 1px solid black;
+}
+
+.testEnd h2, .testEnd p
+.testStart h2, .testStart p{
+    width: 500px;
+    background-color: white;
+    border-radius: 6px;
+}
+.testEnd h2, .testStart h2{
+    padding: 30px 40px;
+    background-color: white;
+    border-radius: 6px;
+}
+.p2{
+    padding: 30px 40px;
+}
+.p1{
+    padding:0 40px;
+}
+.p3{
+    padding: 2px 40px;
+    padding-bottom: 30px;
+}
+.testEnd, .testStart{
+    margin: 0 auto;
+    width: 500px;
+}
+.testStart button{
+    width: 150px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    font-size: 15px;
+    margin: 20px 170px 0;
+
+    transition: all 0.5s ease-out;
+}
+.testStart button:hover{
+    transform: scale(1.04);
+    background-color: white;
+    border: 1px solid #2463EB;
+    color: #2463EB;
+}

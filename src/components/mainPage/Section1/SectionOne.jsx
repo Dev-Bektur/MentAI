@@ -1,5 +1,6 @@
 import React from 'react'
 import './One.scss'
+import { Link } from 'react-router-dom'
 
 function SectionOne() {
   return (
@@ -10,9 +11,9 @@ function SectionOne() {
         <p>Готовьтесь к OPT с ИИ‑планами обучения. Персональные траектории, умная практика и реальный прогресс для старшеклассников Кыргызстана.</p>    
         </div>
 
-            <button className='toTestBtn'>Перейти к тестам
+          <Link to="./test"><button className='toTestBtn'>Перейти к тестам
             <img src="https://media.istockphoto.com/id/1069730414/vector/start-up-line-icon.jpg?s=612x612&w=0&k=20&c=v5_Rsg8DeHzr0CJwwIalFIN26s5deiBoM6yC11nwclM=" alt="" /></button>
-        
+        </Link>
         <div className='buklet'>
             <div>
                 <h3>+1200</h3>

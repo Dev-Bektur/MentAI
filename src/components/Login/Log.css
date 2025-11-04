@@ -18,6 +18,9 @@
     align-items: center;
     background-color: white;
 }
+.loginPage h2{
+    background-color: white;
+}
 .loginPage input{
     width: 320px;
     height: 45px;

@@ -55,3 +55,19 @@
     border: 1px solid #64748B;
     margin-top: 5px;
 }
+
+.logoutButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.logoutButton:hover {
+  background-color: #c1121f;
+}

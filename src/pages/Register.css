@@ -1,0 +1,54 @@
+.regPage{
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background-color: white;
+    border-radius: 6px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+.regPage h2{
+    background-color: white;
+}
+input{
+    width: 350px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 12px 7px;
+    outline: none;
+    background-color: white;
+}
+.regButtons button:hover{
+    cursor: pointer;
+}
+.clean{
+    width: 100px;
+    height: 40px;
+    border: none;
+    text-decoration: underline;
+    background-color: white;
+    transition: all 0.3s ease-out;
+}
+.clean:hover{
+    color: #2463EB;
+    text-decoration: none;
+}
+.do{
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #2463EB;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s ease-out;
+}
+.do:hover{
+    background-color: white;
+    color: #2463EB;
+    border: 1px solid #2463EB;
+}

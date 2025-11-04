@@ -1,0 +1,63 @@
+.admin-panel, .admin-login {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background: #f9fafb;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.admin-panel h1, .admin-login h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.admin-panel table {
+  border-collapse: collapse;
+}
+
+.admin-panel th, .admin-panel td {
+  padding: 8px;
+  text-align: center;
+}
+.admin-panel h1, .admin-panel h2, .admin-panel p{
+  background-color: #f9fafb;
+}
+.admin-login h2{
+  background-color: #f9fafb;
+}
+
+.logoutButton {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.adminInfo{
+  width: 350px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #f9fafb;
+  padding: 20px 0;
+}
+.adminInfo button{
+  width: 200px;
+  height: 40px;
+  border: 1px solid gray;
+  background-color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 30px auto 0;
+  transition: all 0.4s ease-out;
+}
+.adminInfo button:hover{
+  background-color: #2463EB;
+  color: white;
+  border: none;
+}
