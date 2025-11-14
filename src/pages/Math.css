@@ -92,3 +92,12 @@ img{
     border: 1px solid #2463EB;
     color: #2463EB;
 }
+
+.testEnd a{
+    color: #0e53e7;
+    text-decoration: underline;
+}
+.h3Text a{
+    color: #0e53e7;
+    text-decoration: underline;
+}

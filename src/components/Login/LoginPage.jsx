@@ -18,9 +18,12 @@ function LoginPage() {
       return
     }
 
-    // Проверяем совпадение почты и пароля
     if (email === storedUser.email && password === storedUser.password) {
       toast.success('Вы успешно вошли в аккаунт!')
+
+      // 👇 запускаем пользовательское событие, чтобы Header обновился
+      window.dispatchEvent(new Event('userChange'))
+
       setTimeout(() => {
         navigate('/profile')
       }, 1500)

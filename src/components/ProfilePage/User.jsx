@@ -1,5 +1,6 @@
 import React from 'react'
 import './User.css'
+import TestProgress from '../TestProgress/TestProgress'
 
 function User() {
   const [userData, setUserData] = React.useState(
@@ -7,8 +8,11 @@ function User() {
   )
 
   const handleLogout = () => {
-    localStorage.removeItem('user') // удаляем данные пользователя
-    setUserData(null) // обновляем состояние
+    localStorage.removeItem('user')
+    setUserData(null)
+
+    // 👇 событие, чтобы Header узнал, что пользователь вышел
+    window.dispatchEvent(new Event('userChange'))
   }
 
   if (!userData) {
@@ -28,32 +32,12 @@ function User() {
 
       <div className='myRating'>
         <h2>Статистика знаний:</h2>
-        <div className='ratingSection'>
-          <div className='rating'>
-            <div className='ratingInfo'>
-              <p>Математика</p>
-              <p>20%</p>
-            </div>
-            <div className='ratingShower'></div>
-          </div>
-          <div className='rating'>
-            <div className='ratingInfo'>
-              <p>Аналогия</p>
-              <p>12%</p>
-            </div>
-            <div className='ratingShower'></div>
-          </div>
-          <div className='rating'>
-            <div className='ratingInfo'>
-              <p>Чтение и понимание</p>
-              <p>23%</p>
-            </div>
-            <div className='ratingShower'></div>
-          </div>
+        <div className='statistics'>
+        <TestProgress/>  
         </div>
+        
       </div>
 
-      {/* Кнопка выхода */}
       <button className='logoutButton' onClick={handleLogout}>
         Выйти
       </button>

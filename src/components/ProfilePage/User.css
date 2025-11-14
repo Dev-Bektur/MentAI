@@ -25,36 +25,6 @@
     margin: 20px 0 30px 0;
 }
 
-.ratingSection {
-    width: 550px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.rating {
-    width: 550px;
-    height: 50px;
-}
-
-.ratingInfo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.rating p {
-    font-size: 18px;
-}
-
-.ratingShower {
-    width: 550px;
-    height: 15px;
-    border-radius: 8px;
-    background-color: white;
-    border: 1px solid #64748B;
-    margin-top: 5px;
-}
 
 .logoutButton {
   margin-top: 20px;
@@ -66,6 +36,7 @@
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
+  background-color: white;  
 }
 
 .logoutButton:hover {

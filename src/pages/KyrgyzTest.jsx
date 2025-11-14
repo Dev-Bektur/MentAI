@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './Math.css'
 import './Analogia.css'
+import { Link } from "react-router-dom";
 
 const questions = [
   {
@@ -191,13 +192,15 @@ function KyrgyzTest() {
   const [current, setCurrent] = useState(0);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(30 * 60); // 30 минут
+  const [timeLeft, setTimeLeft] = useState(30 * 60);
+  const [started, setStarted] = useState(false);
 
   const [selectedAnswers, setSelectedAnswers] = useState(Array(questions.length).fill(null));
 
-  // Таймер
+  // ТАЙМЕР (работает только после "Начать тест")
   useEffect(() => {
-    if (finished) return;
+    if (!started || finished) return;
+
     const timer = setInterval(() => {
       setTimeLeft(prev => {
         if (prev <= 1) {
@@ -208,16 +211,31 @@ function KyrgyzTest() {
         return prev - 1;
       });
     }, 1000);
+
     return () => clearInterval(timer);
-  }, [finished]);
+  }, [started, finished]);
+
+  // ПРЕДУПРЕЖДЕНИЕ ПЕРЕД ТЕСТОМ
+  if (!started) {
+    return (
+      <div className="testStart">
+        <h2>Внимание!</h2>
+        <p className="p1">У тебя есть 30 минут на прохождение теста.</p>
+        <p className="p2">Не открывай другие вкладки, не обновляй страницу — тест может быть сброшен.</p>
+        <p className="p3">Все неотвеченные вопросы считаются ошибкой.</p>
+        <button onClick={() => setStarted(true)}>Начать тест</button>
+      </div>
+    );
+  }
 
   const handleAnswer = (option) => {
     const newSelected = [...selectedAnswers];
     newSelected[current] = option;
     setSelectedAnswers(newSelected);
 
-    const isCorrect = option === questions[current].answer;
-    if (isCorrect) setScore(score + 1);
+    if (option === questions[current].answer) {
+      setScore(score + 1);
+    }
 
     const next = current + 1;
     if (next < questions.length) {
@@ -238,6 +256,11 @@ function KyrgyzTest() {
         <h2 className="text-2xl font-semibold mb-4">Тест завершён ✅</h2>
         <p className="text-lg">Ты набрал {score} из {questions.length} баллов</p>
         <p>Остаток времени: {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</p>
+
+        <h3 className="h3Text">
+          Чтобы достичь ещё лучших результатов, пройдите курс в разделе  
+          <Link to="/lesson"> "Уроки" </Link> :)
+        </h3>
       </div>
     );
   }
@@ -248,7 +271,9 @@ function KyrgyzTest() {
     <div className="testWindow">
       <h3 className="testCount">Вопрос {current + 1} из {questions.length}</h3>
       <p>Осталось времени: {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</p>
+
       <p className="testQuestion">{q.question}</p>
+
       <div className="answersAnalog">
         {q.options.map((option, index) => (
           <button

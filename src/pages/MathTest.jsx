@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './Math.css';
+import { Link } from "react-router-dom";
 
 
 const pages = [
@@ -229,6 +230,7 @@ function MathTest() {
         <h2>Тест завершён ✅</h2>
         <p className="p1">Ты набрал {score} из {questions.length} баллов</p>
         <p className="p2">Время, оставшееся при завершении: {formatTime(timeLeft)}</p>
+        <h3>Чтобы достичь еще лучших результатов, пройдите наш курс в разделе  <Link to="/lesson">"Уроки"</Link>  :)</h3>
       </div>
     );
   }

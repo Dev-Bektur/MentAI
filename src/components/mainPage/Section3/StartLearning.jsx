@@ -2,6 +2,7 @@ import React from "react";
 import "./Three.css";
 import goalIcon from "../../../assets/svg/goal.svg";
 import chartIcon from "../../../assets/svg/chart.svg";
+import { Link } from "react-router-dom";
 
 function StartLearning() {
   return (
@@ -17,8 +18,8 @@ function StartLearning() {
           </p>
 
           <div className="buttons">
-            <button className="create-btn">Создать профиль</button>
-            <button className="learn-btn">Узнать больше</button>
+          <Link to="/register" className="create-btn">Создать профиль</Link>
+           <Link to="contact" className="learn-btn">Узнать больше</Link>
           </div>
         </div>
 

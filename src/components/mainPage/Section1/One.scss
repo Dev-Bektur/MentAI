@@ -98,17 +98,17 @@
         gap: 15px;
 
         padding: 10px 0;
-
+        
         .plan{
             width: 300px;
             height: 50px;
             padding: 20px;
-
+            
             display: flex;
             gap: 5px;
             align-items: center;
             background-color: white;
-
+            
             img{
                 width: 60px;
                 height: 60px;
@@ -120,42 +120,12 @@
                 color: #020817;
             }
         }
-
-        .ratingSection{
-            width: 550px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin: 0 auto;
+        p{
+            width: 480px;
             background-color: white;
-
-            .rating{
-                width: 550px;
-                height: 50px;
-                background-color: white;
-
-                .ratingInfo{
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    background-color: white;
-
-                    p{
-                        font-size: 18px;
-                        background-color: white;
-                    }
-                }
-                
-                .ratingShower{
-                    width: 550px;
-                    height: 15px;
-                    border-radius: 8px;
-                    background-color: white;
-                    border: 1px solid #64748B;
-                    margin-top: 5px;
-                }
-            }   
+            margin: 10px auto;
         }
+
         .planShow{
             width: 500px;
             height: 40px;
@@ -166,6 +136,10 @@
             font-size: 18px;
             margin: 0 auto;
             cursor: pointer;
+            margin-left: 55px;
+        }
+        .visitPlan{
+            background-color: white;
         }
     }
 }

@@ -41,15 +41,16 @@ function Register() {
         : 'https://cdn-icons-png.flaticon.com/512/8847/8847419.png',
     }
 
-    // сохраняем текущего пользователя
     localStorage.setItem('user', JSON.stringify(userData))
 
-    // сохраняем в общий список всех пользователей (для админки)
     const users = JSON.parse(localStorage.getItem('users')) || []
     users.push(userData)
     localStorage.setItem('users', JSON.stringify(users))
 
     toast.success('Регистрация прошла успешно!')
+
+    // 👇 обновляем Header
+    window.dispatchEvent(new Event('userChange'))
 
     setTimeout(() => {
       navigate('/profile')
