@@ -56,3 +56,60 @@ a{
     text-decoration: none;
     color: rgb(48, 48, 48);
 }
+
+@media(max-width:1024px){
+    .universityPage{
+        width: 1024px;
+    }
+    .uni-list{
+        width: 1020px;
+    }
+    .uni{
+        width: 1010px;
+    }
+    .uniLogo{
+        width: 90px;
+        height: 90px;
+    }
+}
+@media(max-width: 425px){
+    .universityPage{
+        width: 420px;
+    }
+.uni-list{
+    width: 420px;
+}
+.uni{
+    width: 410px;
+}
+.uniLogo{
+    width: 60px;
+    height: 60px;
+}
+.star{
+    width: 70px;
+    height: 20px;
+}
+.uni p{
+    font-size: 16px;
+    margin-left: 15px;
+}
+.universityPage h1{
+    font-size: 22px;
+}
+.uni-list h2{
+    font-size: 18px;
+}
+}
+
+@media(max-width: 375px){
+    .universityPage{
+        width: 365px;
+    }
+    .uni-list{
+        width: 365px;
+    }
+    .uni{
+        width: 375px;
+    }
+}

@@ -18,3 +18,69 @@
 .aboutUs ul li{
     font-size: 18px;
 }
+
+@media(max-width:1024px){
+    .aboutUs{
+        width: 1020px;
+    }
+}
+
+@media(max-width: 425px){
+    .aboutUs{
+        width: 415px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .aboutUs h1{
+        font-size: 24px;
+        width: 390px;
+    }
+    .aboutUs p{
+        width: 390px;
+        font-size: 14px;
+    }
+    .aboutUs ul li{
+        font-size: 14px;
+        width: 390px;
+        list-style: none;
+    }
+    .goal{
+        font-size: 22px;
+        width: 390px;
+    }
+    .goalText{
+        font-size: 14px;
+        width: 390px;
+    }
+}
+
+@media(max-width:375px){
+    .aboutUs{
+        width: 370px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .goal{
+        font-size: 22px;
+    }
+    .goalText{
+        font-size: 14px;
+        width: 370px;
+    }
+    .aboutUs h1{
+        font-size: 24px;
+    }
+    .aboutUs ul li{
+        font-size: 14px;
+        width: 360px;
+        list-style: none;
+    }
+    .aboutUs p{
+        width: 360px;
+        font-size: 14px;
+    }
+}

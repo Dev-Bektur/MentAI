@@ -45,3 +45,13 @@
     font-size: 15px;
   }
 }
+
+@media(max-width: 425px){
+    .qa-page{
+      width: 423px;
+    }
+    .question{
+      padding: 10px 15px;
+      margin: 15px 20px;
+    }
+}
