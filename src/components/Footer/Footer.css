@@ -1,5 +1,6 @@
 footer{
     width: 100%;
+    max-width: 1440px;
     height: 90px;
     margin: 0 auto;
     border-top: 1px solid #64748B;
@@ -36,4 +37,38 @@ footer{
     mix-blend-mode: multiply;
     background-color: #f1f5f9;
     margin-bottom: 15px;
+}
+
+@media(max-width:425px){
+    footer{
+        width: 425px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .soc-media img{
+        width: 25px;
+        height: 25px;
+    }
+    .foot-left h2{
+        font-size: 20px;
+    }
+    .foot-left p{
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .foot-right p{
+        font-size: 16px;
+    }
+    .foot-right{
+        width: 350px;
+    }
+}
+
+@media(max-width: 375px){
+    footer{
+        width: 375px;
+    }
+    .foot-right{
+        width: 300px;
+    }
 }

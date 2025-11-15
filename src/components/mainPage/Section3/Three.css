@@ -1,5 +1,6 @@
 .start-learning {
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   background-color: #2463EB;
   border-radius: 20px;
@@ -97,7 +98,10 @@
 }
 
 /* Адаптив */
-@media (max-width: 900px) {
+@media (max-width: 425px) {
+  .start-learning{
+    width: 415px;
+  }
   .blue-card {
     flex-direction: column;
     text-align: center;
@@ -106,5 +110,27 @@
   .icons {
     justify-content: center;
     margin-top: 30px;
+  }
+  .text h1{
+    font-size: 30px;
+  }
+  .text p{
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .buttons{
+    flex-direction: column;
+  }
+}
+
+@media(max-width:375px){
+  .start-learning{
+    width: 360px;
+  }
+  .text h1{
+    font-size: 26px;
+  }
+  .text p{
+    font-size: 14px;
   }
 }

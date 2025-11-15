@@ -13,7 +13,6 @@ import Register from "./pages/Register";
 import MathTest from "./pages/MathTest";
 import KyrgyzTest from "./pages/KyrgyzTest";
 import Admin from "./pages/Admin";
-import MedAcademy from "./pages/universities/MedAcademy";
 
 const myRouter = createBrowserRouter([
     {
@@ -71,10 +70,6 @@ const myRouter = createBrowserRouter([
             {
                 path: "admin",
                 element:<Admin/>
-            },
-            {
-                path: "medic",
-                element: <MedAcademy/>
             }
         ]
     }

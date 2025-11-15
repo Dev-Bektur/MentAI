@@ -1,5 +1,6 @@
 .testPage {
-  width: 1250px;
+  max-width: 1250px;
+  width: 100%;
   margin: 40px auto;
   text-align: center;
 }

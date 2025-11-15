@@ -1,5 +1,6 @@
 .admin-panel, .admin-login {
   max-width: 600px;
+  width: 100%;
   margin: 40px auto;
   padding: 20px;
   border-radius: 15px;

@@ -1,5 +1,6 @@
 .sec-2{
-    width: 1100px;
+    max-width: 1100px;
+    width: 100%;
     height: 200px;
     margin: 50px auto;
     display: flex;
@@ -49,4 +50,40 @@
     font-weight: 500;
     background-color: white;
     padding: 12px 24px;
+}
+
+@media(max-width:425px){
+    .sec-2{
+        width: 425px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 500px;
+    }
+    .card{
+        width: 250px;
+    }
+    .card h3{
+        font-size: 16px;
+    }
+    .cardBook{
+        width: 200px;
+    }
+    .cardBook p{
+        font-size: 18px;
+    }
+    .cardBook div img{
+        width: 35px;
+        height: 35px;
+    }
+    .cardBook div{
+        width: 43px;
+        height: 43px;
+    }
+}
+
+@media(max-width:375px){
+    .sec-2{
+        width: 360px;
+    }
 }

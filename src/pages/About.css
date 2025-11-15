@@ -1,5 +1,6 @@
 .aboutUs{
-    width: 1250px;
+    max-width: 1250px;
+    width: 100%;
     margin: 0 auto;
 }
 

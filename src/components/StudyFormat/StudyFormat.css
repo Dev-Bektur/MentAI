@@ -1,5 +1,6 @@
 .studies{
-    width: 1200px;
+    max-width: 1200px;
+    width: 100%;
     margin: 30px auto;
 }
 .studies h2{
@@ -37,4 +38,21 @@
 }
 .studyStep1{
     background-color: #89bbfc;
+}
+
+@media(max-width:425px){
+    .studies{
+        width: 425px;
+    }
+    .studyFormat{
+        width: 400px;  
+    }
+}
+@media(max-width: 375px){
+    .studies{
+        width: 375px;
+    }
+    .studyFormat{
+        width: 360px;
+    }
 }

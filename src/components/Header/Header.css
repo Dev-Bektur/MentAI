@@ -1,4 +1,5 @@
 header{
+    max-width: 1440px;
     width: 100%;
     background-color: #f1f5f9;
     border-bottom: 1px solid #64748B;
@@ -34,6 +35,9 @@ header{
 .navigation a:hover{
     cursor: pointer;
     font-size: 17px;
+    background-color: white;
+    padding: 3px 5px;
+    border-radius: 4px;
 }
 .navigation a.active{
     color: #020817;
@@ -88,4 +92,149 @@ header{
     background-color: #2463EB;
     color: white;
     font-size: 16px;
+    height: 40px;
+}
+
+
+/* Адаптивка */
+
+@media(max-width:1024px){
+    header{
+        width: 1024px;
+    }
+    .user{
+        width: 120px;
+        font-size: 14px;
+    }
+    .head-right select{
+        width: 65px;
+    }
+    .navigation a{
+        font-size: 14px;
+    }
+    .logo img{
+        width: 110px;
+    }
+}
+
+/* ---- BURGER MENU ---- */
+
+.burger-icon {
+    display: none;
+    cursor: pointer;
+    color: #020817;
+}
+
+/* MOBILE MENU PANEL */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 270px;
+    height: 100vh;
+    background: #f8fafc;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: right 0.35s ease-in-out;
+    z-index: 2000;
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.mobile-menu nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobile-menu nav a {
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 600;
+    color: #020817;
+}
+
+.mobile-bottom {
+    border-top: 1px solid #cbd5e1;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mobile-bottom select {
+    width: 100%;
+    height: 40px;
+    border-radius: 6px;
+}
+
+/* ---- ADAPTIVE ---- */
+@media(max-width: 425px) {
+
+    /* Hide desktop navigation */
+    .navigation,
+    .head-right {
+        display: none !important;
+    }
+
+    /* Show burger */
+    .burger-icon {
+        display: block;
+    }
+
+    header {
+        padding: 20px;
+        height: 90px;
+    }
+
+    .logo img {
+        width: 110px !important;
+        height: auto;
+    }
+    .user img{
+        width: 25px;
+        height: 25px;
+        mix-blend-mode: multiply;
+    }
+    .user{
+        width: 45px;
+        height: 40px;
+        border-radius: 6px;
+        background-color: white;
+        border: 1px solid #2463EB;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mobile-bottom select{
+        width: 60px;
+        height: 30px;
+    }
+     .mobile-menu nav a, .mobile-menu nav{
+        background-color: #f8fafc;
+    }
+    .reg, .login{
+        height: 30px;
+        border-radius: 6px;
+    }
+
+    header{
+        width: 425px;
+    }
+    .logo img{
+        width: 120px;
+        height: 80px;
+    }
+}
+
+@media(min-width: 426px) {
+    .mobile-menu {
+        display: none;
+    }
 }
