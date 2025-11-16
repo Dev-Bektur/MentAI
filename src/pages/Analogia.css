@@ -16,3 +16,18 @@
     background-color: #a5b4fc;
     border: none;
 }
+
+@media(max-width:425px){
+    .answersAnalog{
+        width: 415px;
+    }
+    .answersAnalog button{
+        width: 95px;
+        height: 45px;
+        font-size: 12px;
+    }
+    .kgTestTime{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,59 @@
+.watchLesson{
+    max-width: 1440px;
+    width: 100%;
+    margin: 20px auto;
+}
+.watchLesson h1{
+    text-align: center;
+}
+.lessonList{
+    width: 1150px;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+.lessonList a{
+    color: black;
+    width: 150px;
+    height: 120px;
+    border-radius: 8px;
+    background-color: #86efac;
+    
+    display: flex;
+    align-items: end;
+    padding: 15px;
+
+    transition: all 0.4s ease-in-out;
+}
+
+.lessonList a:hover{
+    transform: scale(0.92);
+    rotate: 4deg;
+    color: white;
+}
+
+@media(max-width:425px){
+    .watchLesson{
+        width: 425px;
+    }
+    .watchLesson h1{
+        font-size: 26px;
+    }
+    .lessonList{
+        width: 350px;
+        gap: 20px;
+    }
+}
+
+@media(max-width: 375px){
+    .watchLesson{
+        width: 375px;
+        margin-left: 20px;
+    }
+    .lessonList{
+        width: 330px;
+    }
+}

@@ -270,7 +270,7 @@ function KyrgyzTest() {
   return (
     <div className="testWindow">
       <h3 className="testCount">Вопрос {current + 1} из {questions.length}</h3>
-      <p>Осталось времени: {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</p>
+      <p className="kgTestTime">Осталось времени: {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</p>
 
       <p className="testQuestion">{q.question}</p>
 

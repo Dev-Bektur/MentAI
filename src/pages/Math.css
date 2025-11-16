@@ -102,3 +102,68 @@ img{
     color: #0e53e7;
     text-decoration: underline;
 }
+
+@media(max-width:425px){
+    .testStart{
+        width: 420px;
+        margin: 0 auto;
+    }
+.testStart p{
+    font-size: 14px;
+}
+.testStart h2{
+    font-size: 20px;
+}
+.testStart button{
+    width: 120px;
+    height: 37px;
+}
+
+.testWindow{
+    width: 420px;
+    height: 1800px;
+}
+.testWindow img{
+    width: 415px;
+    height: 480px;
+    margin: 0 auto;
+}
+.question-block{
+    width: 420px;
+    margin: 0 auto;
+}
+.question-block p{
+    font-size: 14px;
+}
+.answers button{
+    width: 70px;
+    height: 35px;
+    margin: 0 auto;
+}
+.testWindow h3{
+    font-size: 16px;
+}
+.timer{
+    font-size: 14px;
+}
+.navigation{
+    border: 2px solid green;
+}
+
+.testEnd{
+    width: 415px;
+    margin: 0 auto;
+}
+.testEnd h3{
+    font-size: 18px;
+}
+.testEnd p{
+    font-size: 16px;
+}
+.testEnd h2{
+    font-size: 20px;
+}
+.testQuestion{
+    font-size: 16px;
+}
+}

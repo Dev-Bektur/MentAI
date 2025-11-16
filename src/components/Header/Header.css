@@ -120,9 +120,17 @@ header{
 /* ---- BURGER MENU ---- */
 
 .burger-icon {
-    display: none;
-    cursor: pointer;
-    color: #020817;
+  position: absolute; 
+  top: 20px;
+  right: 20px;
+  z-index: 9999;    
+  cursor: pointer;
+  display: none;    
+  background-color: #f8fafc;
+}
+
+.mobile-menu.open + .burger-icon {
+  z-index: 9999;
 }
 
 /* MOBILE MENU PANEL */

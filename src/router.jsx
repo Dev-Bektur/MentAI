@@ -13,6 +13,8 @@ import Register from "./pages/Register";
 import MathTest from "./pages/MathTest";
 import KyrgyzTest from "./pages/KyrgyzTest";
 import Admin from "./pages/Admin";
+import LessonWatch from "./pages/LessonWatch";
+import Homeworks from "./pages/Homeworks";
 
 const myRouter = createBrowserRouter([
     {
@@ -70,6 +72,14 @@ const myRouter = createBrowserRouter([
             {
                 path: "admin",
                 element:<Admin/>
+            },
+            {
+                path: "watchLesson",
+                element: <LessonWatch/>
+            },
+            {
+                path: "homework",
+                element: <Homeworks/>
             }
         ]
     }
