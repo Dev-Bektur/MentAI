@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './lessonList.css'
+import './LessonList.css'
 import { Link } from 'react-router-dom'
 
 function FirstLesson() {
