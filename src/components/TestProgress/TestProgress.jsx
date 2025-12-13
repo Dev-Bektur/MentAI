@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './TestProgress.css'
+import { useTranslation } from 'react-i18next'
 
 function TestProgress() {
   const [results, setResults] = useState({})
   const [animatedValues, setAnimatedValues] = useState({})
+  const {t} = useTranslation();
 
 
   const getColor = (value) => {
@@ -39,10 +41,10 @@ function TestProgress() {
 
   return (
     <div className="test-progress">
-      <h2>Ваш прогресс</h2>
+      <h2>{t("progress")}</h2>
 
       {Object.keys(results).length === 0 && (
-        <p className="empty">Вы пока не проходили тесты.</p>
+        <p className="empty">{t("noTest")}</p>
       )}
 
       {Object.keys(results).map(subject => {

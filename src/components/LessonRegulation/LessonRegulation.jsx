@@ -1,9 +1,12 @@
 import React from 'react'
 import './LessonRegulation.scss'
 import { Link, useNavigate } from 'react-router-dom'
+import { useTranslation } from "react-i18next";
+import PremiumVersion from '../PremiumVersion/PremiumVersion';
 
 function LessonRegulation() {
   const navigate = useNavigate()
+  const {t} = useTranslation();
 
   const lessons = [
     {
@@ -50,30 +53,31 @@ function LessonRegulation() {
 
   return (
     <div className="lessonRegulation-wrapper">
-<h1>График обучения</h1>
+       <div className='   '><PremiumVersion/></div> 
+<h1>{t("graphic")}</h1>
       <div className='lessonRegulation'>
         
         {lessons.map((item, index) => (
           <div
-            key={index}
-            className="lessonCard"
-            onClick={() => navigate('/lesson')}
+          key={index}
+          className="lessonCard"
+          onClick={() => navigate('/lesson')}
           >
             <h3>{item.day}</h3>
             <p><strong>Тема:</strong> {item.topic}</p>
             <p><strong>Дата:</strong> {item.date}</p>
-            <p><strong>Время:</strong> {item.time}</p>
-            <p><strong>Преподаватель:</strong> {item.teacher}</p>
-            <p><strong>Место:</strong> {item.place}</p>
+            <p><strong>{t("clock")}</strong> {item.time}</p>
+            <p><strong>{t("teacher")}</strong> {item.teacher}</p>
+            <p><strong>{t("place")}</strong> {item.place}</p>
           </div>
         ))}
       </div>
 
       {/* КНОПКИ */}
       <div className="lesson-buttons">
-        <Link to="/lesson" className="btn blue">Начать урок</Link>
-        <Link to="/lesson" className="btn light">Сделать задание</Link>
-        <Link to="/test" className="btn darkblue">Начать тест</Link>
+        <Link to="/lesson" className="btn blue">{t("seeLesson")}</Link>
+        <Link to="/lesson" className="btn light">{t("seeHw")}</Link>
+        <Link to="/test" className="btn darkblue">{t("startTest")}</Link>
       </div>
 
     </div>

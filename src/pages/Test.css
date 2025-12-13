@@ -101,6 +101,17 @@
   color: green;
 }
 
+.permission{
+  font-size: 13px;
+  background-color: rgb(20, 20, 20);
+  padding: 2px 8px;
+  color:rgb(157, 210, 228);
+  border-radius: 6px;
+  position: absolute;
+  bottom: 12px;
+  left: 20px;
+}
+
 
 /* 🪶 Плавное появление снизу */
 @keyframes fadeInUp {

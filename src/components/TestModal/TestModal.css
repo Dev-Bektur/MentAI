@@ -1,36 +1,55 @@
+/* Фон, который перекрывает весь сайт */
 .modal-overlay {
-  position: fixed;
+  position: fixed;        
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100vh;
+
+  background: white;      
+
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 999;
+  align-items: center;
+  z-index: 23;
 }
+
 
 .modal-content {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
+  background: white;     
+  padding: 40px;
+  border-radius: 0px;    
+  width: 100%;
+  max-width: 600px;
+
   text-align: center;
-  width: 400px;
+  box-shadow: none;        
 }
 
+.modal-content h2 {
+  background: white;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Кнопки */
 .modal-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 20px;
+  background-color: white;
 }
 
 .modal-buttons button {
-  padding: 10px 25px;
+  padding: 12px 30px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
+  
+  font-size: 16px;
   font-weight: 600;
+
   background: #007bff;
   color: white;
   transition: 0.3s;

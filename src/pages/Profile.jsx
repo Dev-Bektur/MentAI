@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom'
 
 import './Profile.css'
 import LessonRegulation from '../components/LessonRegulation/LessonRegulation'
+import { useTranslation } from 'react-i18next'
+import PremiumVersion from '../components/PremiumVersion/PremiumVersion'
 
 function Profile() {
+  const {t} = useTranslation();
+
   return (
     <div className='userPage'>
       <User/>
@@ -16,14 +20,20 @@ function Profile() {
   </div>
 
   <div className="ai-text">
-    <h3>Мой ИИ-план</h3>
-    <p>Персональная траектория обучения</p>
-    <p>Нажмите, чтобы увидеть свой план которую вы создавали вместе с нашим искуственным интелектом</p>
+    <h3>{t("myPlan")}</h3>
+    <p>{t("personalStudy")}</p>
+    <p>{t("tapToAI")}</p>
   </div>
 </Link>
 
       <div className='lessonReg'>
      <LessonRegulation/>
+      </div>
+
+      <div className='probnyiOrt'>
+        <PremiumVersion/>
+        <p>{t("probnyiOrt")}</p>
+        <button>{t("probnyiOrtBtn")}</button>
       </div>
     </div>
   )

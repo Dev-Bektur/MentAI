@@ -45,6 +45,7 @@ function Header() {
           <NavLink to="/about">{t("about")}</NavLink>
           <NavLink to="/qa">{t("qa")}</NavLink>
           <NavLink to="/contact">{t("contact")}</NavLink>
+          <NavLink to="/aboutPre">Premium-версия</NavLink>
         </nav>
       </div>
 
@@ -84,6 +85,7 @@ function Header() {
           <NavLink onClick={() => setMenuOpen(false)} to="/about">{t("about")}</NavLink>
           <NavLink onClick={() => setMenuOpen(false)} to="/qa">{t("qa")}</NavLink>
           <NavLink onClick={() => setMenuOpen(false)} to="/contact">{t("contact")}</NavLink>
+          <NavLink onClick={() => setMenuOpen(false)} to="/aboutPre">Premium-версия</NavLink>
         </nav>
 
         <div className="mobile-bottom">

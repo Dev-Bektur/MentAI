@@ -1,8 +1,10 @@
 import React from 'react'
 import './User.css'
 import TestProgress from '../TestProgress/TestProgress'
+import { useTranslation } from "react-i18next";
 
 function User() {
+  const {t} = useTranslation();
   const [userData, setUserData] = React.useState(
     JSON.parse(localStorage.getItem('user'))
   )
@@ -16,7 +18,7 @@ function User() {
   }
 
   if (!userData) {
-    return <h2>Пользователь не найден. Вернитесь на страницу регистрации.</h2>
+    return <h2>{t("notFound")}</h2>
   }
 
   return (
@@ -30,12 +32,12 @@ function User() {
         </div>
         
       <button className='logoutButton' onClick={handleLogout}>
-        Выйти
+        {t("out")}
       </button>
       </div>
 
       <div className='myRating'>
-        <h2>Статистика знаний:</h2>
+        <h2>{t("statistic")}</h2>
         <div className='statistics'>
         <TestProgress/>  
         </div>

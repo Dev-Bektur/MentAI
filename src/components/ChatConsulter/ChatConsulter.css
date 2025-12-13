@@ -1,0 +1,133 @@
+.AIChatConsult {
+  width: 70px;
+  height: 70px;
+  border: 2px solid #64748B;
+  border-radius: 50%;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  right: 15px;
+  bottom: 25px;
+
+  z-index: 20;
+
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+  
+/* Картинка */
+.AIChatConsult img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* 🔥 Открытый чат */
+.AIChatConsult.open {
+  width: 100%;
+  height: calc(100vh - 90px); /* Оставляет хедер и футер видимыми */
+  right: 0;
+  bottom: 0;
+  border-radius: 0;
+  border: none;
+  background: white;
+}
+
+/* Чат */
+.chat-container {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Заголовок чата */
+.chat-header {
+ width: 100%;
+ height: 60px;
+  background: #1e293b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+}
+.chat-container h3{
+    background-color: #1e293b;
+    font-size: 22px;
+}
+
+.chat-header button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Ввод */
+.chat-input {
+  display: flex;
+  padding: 10px;
+  background: white;
+  border-top: 1px solid #cbd5e1;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+}
+
+.chat-input button {
+  margin-left: 10px;
+  padding: 10px 16px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Список сообщений */
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Сообщения */
+.msg {
+  padding: 12px 17px;
+  border-radius: 10px;
+  font-size: 15px;
+  white-space: pre-wrap; /* <-- Самое важное */
+  word-wrap: break-word; /* <-- Переносит длинные слова */
+  max-width: 80%;        /* <-- Чтобы не растягивалось */
+}
+
+/* Сообщение пользователя */
+.msg.user {
+  background: #3b82f6;
+  color: white;
+  align-self: flex-end;  /* <-- Прижимает вправо */
+}
+
+/* Сообщение ИИ */
+.msg.ai {
+  background: #e2e8f0;
+  color: #1e293b;
+  align-self: flex-start; /* <-- Прижимает влево */
+}

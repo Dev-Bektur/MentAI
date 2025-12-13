@@ -17,10 +17,10 @@ function Test() {
     { name: "Русский язык", path: "/rus", key: "rus" },
     { name: "Кыргызский тил(аналогия)", path: "/kyrgyz", key: "kyrgyz" },
     { name: "Окуу жана түшүнүү(чтение и понимание)", path: "/kyrgyz_read", key: "kyrgyz_read" },
-    { name: "English", path: "/eng", key: "eng" },
-    { name: "Химия", path: "/chemistry", key: "chemistry" },
-    { name: "Биология", path: "/biology", key: "biology" },
-    { name: "Физика", path: "/physics", key: "physics" }
+    { name: "English", path: "/eng", key: "eng", permission: "Premium версия" },
+    { name: "Химия", path: "/chemistry", key: "chemistry" , permission: "Premium версия"},
+    { name: "Биология", path: "/biology", key: "biology", permission: "Premium версия" },
+    { name: "Физика", path: "/physics", key: "physics", permission: "Premium версия" }
   ]
 
   return (
@@ -44,6 +44,16 @@ function Test() {
                 )}
 
                 {test.name}
+
+                
+                {test.permission && 
+                  (
+                  <div className='permission'>
+                {test.permission}  
+                </div>
+                )
+                }
+                
               </li>
             </Link>
           )

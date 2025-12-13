@@ -20,6 +20,7 @@ import PlanFromAI from "./pages/PlanFromAI";
 import Subject from "./pages/Subject";
 import SubjectHw from "./pages/SubjectHw";
 import FirstLesson from "./pages/LessonList/FirstLesson";
+import AboutPremium from "./pages/AboutPremium";
 
 const myRouter = createBrowserRouter([
     {
@@ -101,6 +102,10 @@ const myRouter = createBrowserRouter([
             {
                 path: "newSubject",
                 element: <SubjectHw/>
+            },
+            {
+                path: "aboutPre",
+                element: <AboutPremium/>
             },
             {
                 path: "firstLesson",
