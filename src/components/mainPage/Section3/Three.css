@@ -41,6 +41,12 @@
   gap: 20px;
   background-color: #2463EB;
 }
+.buttons a:hover{
+  cursor: grab;
+}
+.buttons a:active{
+  cursor: grabbing;
+}
 
 .create-btn,
 .learn-btn {

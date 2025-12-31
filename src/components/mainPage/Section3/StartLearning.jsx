@@ -14,13 +14,10 @@ function StartLearning() {
           <h1>
             {t("startLesson")} <br /> {t("today")}
           </h1>
-          <p>
-            {t("pesonalPlan")} <strong>400–500 KGS</strong> {t("pesonalPlan1")}
-          </p>
 
           <div className="buttons">
           <Link to="/register" className="create-btn">{t("createProfile")}</Link>
-           <Link to="contact" className="learn-btn">{t("more")}</Link>
+           <Link to="/about" className="learn-btn">{t("more")}</Link>
           </div>
         </div>
 

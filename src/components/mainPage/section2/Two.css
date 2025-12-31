@@ -15,6 +15,7 @@
     background-color: white;
     border-radius: 8px;
 }
+
 .cardBook{
     width: 200px;
     display: flex;
@@ -76,7 +77,7 @@
         padding: 0 10px;
     }
 
-    .card {
+    .card{
         width: 100%; /* Карточка занимает всю ширину контейнера */
         max-width: 320px; /* Но не становится огромной */
         height: auto; /* Авто-высота, чтобы текст не вылезал */

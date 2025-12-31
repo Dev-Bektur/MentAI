@@ -58,6 +58,10 @@
             background-color: #2463EB;
             color: white;
             padding: 7px 14px;
+            cursor: grab;
+        }
+        .toTestBtn:active{
+          cursor: grabbing;
         }
         .toTestBtn:hover img{
             display: none;
@@ -142,8 +146,11 @@
             color: white;
             font-size: 18px;
             margin: 0 auto;
-            cursor: pointer;
+            cursor: grab;
             margin-left: 55px;
+        }
+        .planShow:active{
+          cursor: grabbing;
         }
         .visitPlan{
             background-color: white;

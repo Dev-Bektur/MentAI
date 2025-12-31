@@ -1,100 +1,62 @@
+/* Основной контейнер */
 .AIChatConsult {
   width: 70px;
   height: 70px;
   border: 2px solid #64748B;
   border-radius: 50%;
   background-color: white;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: fixed;
   right: 15px;
   bottom: 25px;
-
-  z-index: 20;
-
-  transition: all 0.5s ease-in-out;
+  z-index: 1000; /* Поднял z-index повыше */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
-  
-/* Картинка */
-.AIChatConsult img {
+.AIChatConsult img{
   width: 60px;
   height: 60px;
-  object-fit: contain;
   border-radius: 50%;
-  pointer-events: none;
+  object-fit: contain;
 }
 
-/* 🔥 Открытый чат */
+/* 🔥 Открытый чат — делаем его удобным для чтения */
 .AIChatConsult.open {
-  width: 100%;
-  height: calc(100vh - 90px); /* Оставляет хедер и футер видимыми */
-  right: 0;
-  bottom: 0;
-  border-radius: 0;
-  border: none;
-  background: white;
-}
-
-/* Чат */
-.chat-container {
-  width: 100%;
-  height: 80vh;
+  width: 1330px; /* Фиксированная ширина на десктопе */
+  height: 500px; 
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
   display: flex;
   flex-direction: column;
 }
 
-/* Заголовок чата */
-.chat-header {
- width: 100%;
- height: 60px;
-  background: #1e293b;
-  color: white;
+.chat-header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
+  width: 100%;
+  height: 60px;
+  padding: 0 25px;
 }
-.chat-container h3{
-    background-color: #1e293b;
-    font-size: 22px;
-}
-
-.chat-header button {
-  background: transparent;
+.chat-header button{
   border: none;
-  color: white;
-  font-size: 26px;
+  font-size: 22px;
+}
+.chat-header button:hover{
+  color: rgb(224, 19, 19);
   cursor: pointer;
 }
 
-/* Ввод */
-.chat-input {
+/* Контейнер внутри */
+.chat-container {
+  width: 100%;
+  height: 100%; /* Занимает все пространство родителя */
   display: flex;
-  padding: 10px;
+  flex-direction: column;
   background: white;
-  border-top: 1px solid #cbd5e1;
-}
-
-.chat-input input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #94a3b8;
-  border-radius: 6px;
-}
-
-.chat-input button {
-  margin-left: 10px;
-  padding: 10px 16px;
-  border: none;
-  background: #3b82f6;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
 }
 
 /* Список сообщений */
@@ -102,32 +64,80 @@
   flex: 1;
   padding: 15px;
   overflow-y: auto;
-  background: #f8fafc;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  /* Плавный скролл */
+  scroll-behavior: smooth; 
 }
 
-/* Сообщения */
+/* Сообщения — Ключевые правки здесь */
 .msg {
-  padding: 12px 17px;
-  border-radius: 10px;
+  padding: 10px 14px;
+  border-radius: 18px;
   font-size: 15px;
-  white-space: pre-wrap; /* <-- Самое важное */
-  word-wrap: break-word; /* <-- Переносит длинные слова */
-  max-width: 80%;        /* <-- Чтобы не растягивалось */
+  line-height: 1.5; /* Увеличиваем межстрочный интервал */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-width: 85%;
+  position: relative;
+  /* Убираем фиксированную высоту, если она была */
+  height: auto; 
 }
 
-/* Сообщение пользователя */
 .msg.user {
   background: #3b82f6;
   color: white;
-  align-self: flex-end;  /* <-- Прижимает вправо */
+  align-self: flex-end;
+  border-bottom-right-radius: 4px; /* Красивый хвостик как в мессенджерах */
 }
 
-/* Сообщение ИИ */
 .msg.ai {
-  background: #e2e8f0;
+  background: #f1f5f9;
   color: #1e293b;
-  align-self: flex-start; /* <-- Прижимает влево */
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+/* Поле ввода */
+.chat-input {
+  display: flex;
+  padding: 15px;
+  background: white;
+  border-top: 1px solid #f1f5f9;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.chat-input input:focus {
+  border-color: #3b82f6;
+}
+.chat-input button{
+  width: 70px;
+  border-radius: 10px;
+  border: 1px solid #3b82f6;
+  margin-left: 20px;
+  font-size: 18px;
+  color:  #352f36;
+  cursor: pointer;
+}
+
+
+/* --- Адаптация для мобилок --- */
+@media (max-width: 480px) {
+  .AIChatConsult.open {
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
 }
