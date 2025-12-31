@@ -24,7 +24,7 @@ function Footer() {
           </a>  
 
           <a href="https://chat.whatsapp.com/F8ENaNhniGH6ubUNwJdffd">
-            <img src="https://www.svgrepo.com/show/365880/whatsapp-logo-thin.svg" alt="" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGLgWiJ9DJkd1qWGQVnCeXD81fY0e0MEBjlg&s" alt="" />
           </a>
         </div>
         <p>© 2026 BilimHub. {t("right")}</p>
