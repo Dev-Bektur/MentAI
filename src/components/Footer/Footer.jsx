@@ -15,11 +15,19 @@ function Footer() {
 
       <div className='foot-right'>
         <div className='soc-media'>
-            <img src="https://www.clipartmax.com/png/middle/169-1696957_instagram-icon-instagram-icon-svg-white.png" alt="" />
+          <a href="https://www.instagram.com/mentoraikg?igsh=MWVzeWxpZ2pzb3c5Mg==">
+          <img src="https://www.clipartmax.com/png/middle/169-1696957_instagram-icon-instagram-icon-svg-white.png" alt="" />
+          </a>
+
+          <a href="https://t.me/+niWBKt9xKUs4YWJi">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgyil8zkC1E5ORPwOqHiQpG3UWsPkIgwsF2A&s" alt="" />
+          </a>  
+
+          <a href="https://chat.whatsapp.com/F8ENaNhniGH6ubUNwJdffd">
             <img src="https://www.svgrepo.com/show/365880/whatsapp-logo-thin.svg" alt="" />
+          </a>
         </div>
-        <p>© 2025 BilimHub. {t("right")}</p>
+        <p>© 2026 BilimHub. {t("right")}</p>
       </div>
     </footer>
   )
