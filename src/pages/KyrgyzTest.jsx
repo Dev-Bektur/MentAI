@@ -245,24 +245,20 @@ function KyrgyzTest() {
     }
   };
 
-  const finishTest = () => {
-  let s = 0;
-  answers.forEach((ans, i) => {
-    if (ans === questions[i].answer) s++;
-  });
+const finishTest = () => {
+  // Считаем баллы на основе массива выбранных ответов
+  const finalScore = selectedAnswers.reduce((acc, currentAns, index) => {
+    return currentAns === questions[index].answer ? acc + 1 : acc;
+  }, 0);
 
-  setScore(s);
+  setScore(finalScore);
   setFinished(true);
 
-  // Старое сохранение (если ты его используешь)
-  localStorage.setItem("kyrgyz_score", s);
-
-  // ✔ Новое сохранение истории, которое нужно для списка тестов
+  // Сохраняем в историю
   const history = JSON.parse(localStorage.getItem("testHistory")) || {};
-
   history["kyrgyz"] = {
     date: new Date().toLocaleDateString(),
-    correct: s,
+    correct: finalScore,
     total: questions.length
   };
 

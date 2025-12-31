@@ -93,40 +93,69 @@
     background-color: #2463EB;
 }
 
-/* Адаптив */
-@media (max-width: 425px) {
-  .start-learning{
-    width: 415px;
+/* Полностью переписанный адаптив для мобильных устройств */
+@media (max-width: 768px) {
+  .start-learning {
+    width: calc(100% - 20px); /* Резиновая ширина с небольшими отступами по бокам */
+    margin: 20px auto;
+    border-radius: 15px;
   }
+
   .blue-card {
     flex-direction: column;
+    padding: 40px 20px; /* Уменьшаем внутренние отступы, чтобы текст не был зажат */
+    text-align: center;
+    align-items: center;
+  }
+
+  .text h1 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  .text p {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .buttons {
+    flex-direction: column; /* Кнопки одна под другой */
+    width: 100%;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .create-btn,
+  .learn-btn {
+    width: 100%; /* Кнопки на всю ширину на мобилках */
+    max-width: 280px; /* Но не шире 280px, чтобы не выглядели громоздко */
     text-align: center;
   }
 
   .icons {
+    margin-top: 40px; /* Убираем огромный отступ 160px */
+    flex-wrap: wrap; /* Иконки перенесутся, если не влезут */
     justify-content: center;
-    margin-top: 30px;
+    gap: 15px;
   }
-  .text h1{
-    font-size: 30px;
-  }
-  .text p{
-    font-size: 16px;
-    line-height: 25px;
-  }
-  .buttons{
-    flex-direction: column;
+
+  .icon {
+    font-size: 14px;
   }
 }
 
-@media(max-width:375px){
-  .start-learning{
-    width: 360px;
+/* Специфические правки для маленьких экранов (Mobile S: 320px) */
+@media (max-width: 320px) {
+  .text h1 {
+    font-size: 24px;
   }
-  .text h1{
-    font-size: 26px;
+
+  .icons {
+    gap: 10px;
   }
-  .text p{
-    font-size: 14px;
+
+  .icon p {
+    font-size: 12px;
   }
 }

@@ -55,7 +55,7 @@ function LoginPage() {
 
         <div className='login-btn'>
           <button className='btn1' onClick={logIn}>Войти</button>
-          <Link to="/register">
+          <Link to="/register" className='regbtn'>
             <button className='btn2'>Еще нет аккаунта?</button>
           </Link>
         </div>

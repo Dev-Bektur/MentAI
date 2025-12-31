@@ -41,19 +41,59 @@
     background-color: #89bbfc;
 }
 
-@media(max-width:425px){
-    .studies{
-        width: 425px;
+/* Базовые правки для десктопа (улучшаем гибкость) */
+.studies {
+    max-width: 1200px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 15px; /* Добавляем отступы, чтобы контент не лип к краям */
+    font-family: Manrope;
+    box-sizing: border-box;
+}
+
+.studyFormat {
+    max-width: 1000px; /* Используем max-width вместо width */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 30px auto;
+    justify-content: center; /* Центрируем карточки, если их мало в ряду */
+}
+
+/* Адаптив для всех мобильных (от 425px до 320px) */
+@media (max-width: 768px) {
+    .studies h2 {
+        font-size: 24px;
+        text-align: center;
     }
-    .studyFormat{
-        width: 400px;  
+
+    .studyFormat {
+        gap: 15px; /* Немного уменьшаем зазор между карточками */
+    }
+
+    .studyFormat div {
+        /* Используем 100% ширины, чтобы карточка тянулась, 
+           но ограничиваем её, чтобы она не была слишком огромной 
+        */
+        width: 100%; 
+        max-width: 340px; 
+        height: 200px; /* Уменьшаем высоту для мобильных */
+        padding-top: 130px; /* Корректируем положение текста внутри */
+        padding-left: 20px;
+        font-size: 18px;
     }
 }
-@media(max-width: 375px){
-    .studies{
-        width: 375px;
+
+/* Тонкая настройка для Mobile S (320px) */
+@media (max-width: 320px) {
+    .studies h2 {
+        font-size: 22px;
     }
-    .studyFormat{
-        width: 360px;
+
+    .studyFormat div {
+        height: 180px;
+        padding-top: 110px;
+        font-size: 16px;
     }
 }

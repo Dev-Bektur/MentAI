@@ -1,66 +1,121 @@
-.whiteLog{
+.whiteLog {
     max-width: 1220px;
     width: 100%;
-    height: 100%;
-    background-color: white;
+    margin: 100px auto 30px; /* Отступ сверху под фиксированный хедер */
     padding: 20px;
-    margin: 0 auto;
-    border-radius: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* Центрируем форму по вертикали */
 }
 
-.loginPage{
-    width: 500px;
-    margin: 30px auto;
-    height: 200px;
+.loginPage {
+    width: 100%;
+    max-width: 450px; /* Ограничиваем ширину на десктопе */
+    margin: 0 auto;
+    /* Убрали фиксированную высоту height: 200px */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    background-color: white;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Легкая тень для формы */
+}
 
+.inputs {
+    width: 100%; /* Контейнер инпутов на всю ширину формы */
     display: flex;
     flex-direction: column;
     gap: 20px;
-    align-items: center;
-    background-color: white;
 }
-.loginPage h2{
-    background-color: white;
-}
-.loginPage input{
-    width: 320px;
-    height: 45px;
+
+.loginPage input {
+    width: 100%; /* Инпуты растягиваются по форме */
+    height: 50px;
     border: none;
     outline: none;
-    border-bottom: 1px solid #64748B;
-    padding: 0 12px;
-    background-color: white;
-}
-.inputs{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: white;
-}
-.login-btn{
-    display: flex;
-    align-items: center;
-    background-color: white;
-}
-.btn1{
-    width: 120px;
-    height: 40px;
-    border-radius: 6px;
-    border: 1px solid #64748B;
-    background-color: white;
-
+    border-bottom: 2px solid #e2e8f0;
+    padding: 0 5px;
     font-size: 16px;
-    cursor: pointer;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
 }
-.btn2{
-    background-color: white;
-    width: 200px;
-    height: 40px;
+
+.loginPage input:focus {
+    border-bottom: 2px solid #2463EB; /* Подсветка при клике */
+}
+
+.login-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Кнопки друг под другом на мобилках */
+    align-items: center;
+    gap: 15px;
+}
+
+.btn1 {
+    width: 100%; /* Кнопка войти на всю ширину для удобства нажатия пальцем */
+    max-width: 200px;
+    height: 45px;
+    border-radius: 8px;
     border: none;
+    background-color: #2463EB;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn1:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.btn2 {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #64748B;
     text-decoration: underline;
     cursor: pointer;
-    padding-top: 10px;
+    padding: 5px;
 }
-.btn2:hover{
-    color: #2463EB;
+
+/* --- ADAPTIVE --- */
+
+@media (max-width: 768px) {
+    .whiteLog {
+        margin-top: 80px;
+        padding: 10px;
+    }
+    
+    .loginPage {
+        padding: 30px 15px;
+        box-shadow: none; /* На маленьких экранах можно убрать тень */
+    }
+    .loginPage h2{
+        background-color: white;
+    }
+    .inputs input{
+        background-color: white;
+    }
+}
+
+@media (max-width: 425px) {
+    .loginPage h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .loginPage input {
+        font-size: 14px; /* Чтобы не увеличивался масштаб в iOS при вводе */
+    }
+
+    .btn1 {
+        max-width: 100%; /* На совсем маленьких экранах кнопка на всю ширину */
+    }
 }

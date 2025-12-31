@@ -49,12 +49,13 @@ header{
     color: #020817;
     font-size: 17px;
 }
-
 .logo img{
-    width: 130px;
-    height: 110px;
+    width: 70px;
+    height: 70px;
     object-fit: contain;
     margin-left: -20px;
+    margin-right: 20px;
+    border-radius: 8px;
 }
 
 .head-right{
@@ -99,6 +100,7 @@ header{
     color: white;
     font-size: 16px;
     height: 40px;
+    border-radius: 6px;
 }
 
 
@@ -188,67 +190,97 @@ header{
 }
 
 /* ---- ADAPTIVE ---- */
-@media(max-width: 425px) {
 
-    /* Hide desktop navigation */
+/* Планшеты */
+@media(max-width: 1024px) {
+    header {
+        width: 100%; /* Убираем 1024px */
+        padding: 20px;
+    }
+    .navigation {
+        gap: 10px;
+    }
+    .navigation a {
+        font-size: 13px;
+    }
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Мобильные (L, M, S) */
+@media(max-width: 768px) {
+    /* Скрываем десктопную навигацию и правую часть */
     .navigation,
     .head-right {
         display: none !important;
     }
 
-    /* Show burger */
+    /* Показываем бургер */
     .burger-icon {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent; /* Убираем фон, если не нужен */
     }
 
     header {
-        padding: 20px;
-        height: 90px;
+        width: 100%; /* Хедер всегда на всю ширину */
+        height: 70px; /* Уменьшаем высоту для мобильных */
+        padding: 0 20px;
+        box-sizing: border-box;
     }
 
     .logo img {
-        width: 110px !important;
-        height: auto;
-    }
-    .user img{
-        width: 25px;
-        height: 25px;
-        mix-blend-mode: multiply;
-    }
-    .user{
-        width: 45px;
-        height: 40px;
-        border-radius: 6px;
-        background-color: white;
-        border: 1px solid #2463EB;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .mobile-bottom select{
-        width: 60px;
-        height: 30px;
-    }
-     .mobile-menu nav a, .mobile-menu nav{
-        background-color: #f8fafc;
-    }
-    .reg, .login{
-        height: 30px;
-        border-radius: 6px;
+        width: 50px !important;
+        height: 50px !important;
+        margin-left: 0;
     }
 
-    header{
-        width: 425px;
+    /* Исправляем мобильное меню для очень маленьких экранов (320px) */
+    .mobile-menu {
+        width: 80%; /* На маленьких экранах лучше в процентах */
+        max-width: 270px;
+        right: -100%; /* Прячем полностью за экран */
     }
-    .logo img{
-        width: 120px;
-        height: 80px;
+
+    .mobile-menu.open {
+        right: 0;
+    }
+
+    .mobile-menu nav a {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+
+    .mobile-bottom {
+        gap: 15px;
+    }
+    
+    .mobile-bottom .reg, 
+    .mobile-bottom .login {
+        width: 100%; /* Кнопки в меню на всю ширину */
+        height: 45px;
     }
 }
 
-@media(min-width: 426px) {
-    .mobile-menu {
-        display: none;
+/* Специфично для iPhone SE и старых телефонов (320px) */
+@media(max-width: 320px) {
+    header {
+        padding: 0 10px;
+    }
+    .logo img {
+        width: 45px !important;
+    }
+    .burger-icon {
+        right: 10px;
+    }
+}
+
+/* Фикс, чтобы при перевороте экрана меню не ломалось */
+@media(min-width: 769px) {
+    .mobile-menu, .burger-icon {
+        display: none !important;
     }
 }

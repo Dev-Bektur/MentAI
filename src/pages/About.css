@@ -1,87 +1,84 @@
-.aboutUs{
+.aboutUs {
     max-width: 1250px;
     width: 100%;
     margin: 0 auto;
     font-family: Manrope;
+    padding: 20px; /* Важный отступ, чтобы текст не касался краев экрана */
+    box-sizing: border-box;
 }
 
-.aboutUs h1{
+.aboutUs h1 {
     font-size: 28px;
     margin-bottom: 15px;
-    margin-top: 50px;
+    margin-top: 40px;
+    line-height: 1.2;
 }
-.aboutUs p{
+
+.aboutUs p {
     font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
-.aboutUs p span{
+
+.aboutUs p span {
     color: #2463EB;
+    font-weight: 600;
 }
-.aboutUs ul li{
+
+.aboutUs ul {
+    padding-left: 20px; /* Возвращаем стандартный отступ для маркеров */
+    margin-bottom: 20px;
+}
+
+.aboutUs ul li {
     font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
-@media(max-width:1024px){
-    .aboutUs{
-        width: 1020px;
+/* --- АДАПТИВ --- */
+
+/* Планшеты и мелкие экраны */
+@media (max-width: 1024px) {
+    .aboutUs {
+        width: 100%; /* Убираем фиксированные 1020px */
+        padding: 20px 40px;
     }
 }
 
-@media(max-width: 425px){
-    .aboutUs{
-        width: 415px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+/* Мобильные телефоны (L, M, S) */
+@media (max-width: 768px) {
+    .aboutUs {
+        padding: 80px 20px 40px; /* 80px сверху, так как хедер fixed */
     }
-    .aboutUs h1{
+
+    .aboutUs h1 {
         font-size: 24px;
-        width: 390px;
+        margin-top: 30px;
     }
-    .aboutUs p{
-        width: 390px;
-        font-size: 14px;
+
+    .aboutUs p, 
+    .aboutUs ul li {
+        font-size: 15px; /* На мобилках 14-15px — стандарт */
     }
-    .aboutUs ul li{
-        font-size: 14px;
-        width: 390px;
-        list-style: none;
+
+    .aboutUs ul {
+        padding-left: 18px; /* Оставляем буллиты, чтобы это выглядело как список */
     }
-    .goal{
+    
+    .goal {
         font-size: 22px;
-        width: 390px;
-    }
-    .goalText{
-        font-size: 14px;
-        width: 390px;
+        text-align: center; /* Заголовок цели можно отцентровать для акцента */
     }
 }
 
-@media(max-width:375px){
-    .aboutUs{
-        width: 370px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .goal{
+/* Тонкая настройка для самых узких (320px) */
+@media (max-width: 320px) {
+    .aboutUs h1 {
         font-size: 22px;
     }
-    .goalText{
-        font-size: 14px;
-        width: 370px;
-    }
-    .aboutUs h1{
-        font-size: 24px;
-    }
-    .aboutUs ul li{
-        font-size: 14px;
-        width: 360px;
-        list-style: none;
-    }
-    .aboutUs p{
-        width: 360px;
+    .aboutUs p, 
+    .aboutUs ul li {
         font-size: 14px;
     }
 }

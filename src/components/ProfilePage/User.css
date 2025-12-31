@@ -1,48 +1,117 @@
 .profile {
     max-width: 1250px;
     width: 100%;
-    margin: 30px auto;
+    margin: 100px auto 30px; /* Отступ под фиксированный хедер */
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .userInfo {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Распределяем контент по краям */
     gap: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 25px;
+    flex-wrap: wrap; /* Чтобы на мобилках элементы могли переноситься */
+}
 
-    border-bottom: 1px solid #64748B;
-    padding-bottom: 20px;
+/* Группируем фото и текст для удобного выравнивания */
+.userInfo > div:first-of-type {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .userInfo img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-}
-.userInfo button{
-  margin-left: 875px;
-}
-
-/* ----------------------------------- */
-.myRating h2{
-    font-size: 20px;
-    font-weight: 500;
-    margin: 20px 0 30px 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Делаем аватарку круглой */
+    object-fit: cover;
+    border: 2px solid #2463EB;
 }
 
+.userInfo h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #0f172a;
+}
+
+.userInfo p {
+    margin: 4px 0;
+    color: #64748b;
+    font-size: 14px;
+}
 
 .logoutButton {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #e63946;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-  background-color: white;  
+    padding: 10px 24px;
+    background-color: #fee2e2; /* Светло-красный фон */
+    color: #ef4444; /* Ярко-красный текст */
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    /* Убрали фиксированный margin-left */
 }
 
 .logoutButton:hover {
-  background-color: #c1121f;
+    background-color: #ef4444;
+    color: white;
+}
+
+/* Статистика */
+.myRating h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 30px 0 20px 0;
+    color: #1e293b;
+}
+
+.statistics {
+    width: 100%;
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- ADAPTIVE --- */
+
+@media (max-width: 768px) {
+    .userInfo {
+        justify-content: center; /* Центрируем всё на планшетах */
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .userInfo > div:first-of-type {
+        flex-direction: column; /* Фото над текстом */
+    }
+
+    .logoutButton {
+        width: 100%;
+        max-width: 200px;
+        margin-left: 0; /* Сбрасываем любые отступы */
+    }
+}
+
+@media (max-width: 425px) {
+    .profile {
+        margin-top: 80px;
+        padding: 0 15px;
+    }
+
+    .userInfo h1 {
+        font-size: 20px;
+    }
+
+    .userInfo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .statistics {
+        padding: 10px;
+    }
 }

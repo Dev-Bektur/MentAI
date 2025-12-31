@@ -1,70 +1,97 @@
-.preVers{
+.preVers {
     max-width: 1150px;
     width: 100%;
-    margin: 30px auto;
+    margin: 100px auto 30px; /* Добавили отступ сверху из-за fixed хедера */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: Manrope;
 }
-.preVers h1{
+
+.preVers h1 {
     font-size: 32px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    text-align: center; /* Заголовок по центру */
 }
-.preVers ul{
+
+.preVersText {
     font-size: 20px;
-    line-height: 27px;
+    margin-bottom: 25px;
+    text-align: center;
+    max-width: 800px;
+    align-self: center; /* Центрируем только этот абзац */
 }
-.preVersText{
+
+.preVers ul {
     font-size: 20px;
+    line-height: 1.5;
+    padding-left: 20px; /* Отступ для маркеров */
+}
+
+.preVers ul li {
     margin-bottom: 20px;
+    font-weight: 600;
 }
-.preVers ul p{
+
+.preVers ul p {
     font-size: 17px;
     color: rgb(81, 86, 88);
+    font-weight: 400;
+    margin-top: 5px;
 }
-.premiumBtn{
+
+.premiumBtn {
     width: 220px;
     height: 50px;
     border-radius: 8px;
-    font-size: 13px;
-    margin-top: 50px;
+    font-size: 16px; /* Чуть увеличили, 13px слишком мелко */
+    margin: 40px auto; /* Центрируем кнопку */
     background-color: #2463EB;
     color: white;
     border: none;
     cursor: pointer;
     transition: all 0.4s ease;
 }
-.premiumBtn:hover{
-    transform: scale(0.93);
-}   
 
-@media(max-width: 425px){
-    .preVers{
-        max-width: 425px;
+/* --- АДАПТИВ (Mobile L, M, S) --- */
+
+@media (max-width: 768px) {
+    .preVers {
+        margin-top: 80px; /* Чуть меньше отступ на мобилках */
+    }
+
+    .preVers h1 {
+        font-size: 26px;
+    }
+
+    .preVersText {
+        font-size: 16px;
+    }
+
+    .preVers ul {
+        font-size: 17px; /* Уменьшаем основной шрифт списка */
+    }
+
+    .preVers ul p {
+        font-size: 14px; /* Описание функций делаем компактнее */
+    }
+
+    .premiumBtn {
         width: 100%;
-    }
-    .premiumBtn{
-        width: 150px;
-    }
-    .preVers h1{
-        font-size: 28px;
-    }
-    .preVers ul{
-        font-size: 18px;
-    }
-    .preVers ul p{
+        max-width: 280px; /* Кнопка на мобилке удобнее, когда она крупнее */
+        height: 55px;
         font-size: 15px;
     }
 }
-@media(max-width: 375px){
-    .preVers{
-        max-width: 375px;
-        width: 100%;
+
+/* Настройка для Mobile S (320px) */
+@media (max-width: 320px) {
+    .preVers h1 {
+        font-size: 22px;
     }
-}
-@media(max-width: 325px){
-    .preVers{
-        max-width: 325px;
-        width: 100%;
+    
+    .preVers ul {
+        padding-left: 15px; /* Немного экономим место */
     }
 }

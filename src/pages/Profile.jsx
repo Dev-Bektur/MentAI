@@ -31,7 +31,6 @@ function Profile() {
       </div>
 
       <div className='probnyiOrt'>
-        <PremiumVersion/>
         <p>{t("probnyiOrt")}</p>
         <button>{t("probnyiOrtBtn")}</button>
       </div>

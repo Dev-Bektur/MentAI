@@ -278,7 +278,7 @@ function MathTest() {
   })}
 </div>
 
-      <div className="navigation">
+      <div className="navigationMath">
         <button onClick={handleBack} disabled={pageIndex === 0}>Назад</button>
         <button onClick={handleNext}>
           {pageIndex === pages.length - 1 ? "Завершить" : "Вперед"}

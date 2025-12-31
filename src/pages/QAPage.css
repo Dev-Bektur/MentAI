@@ -1,41 +1,57 @@
 .qa-page {
   width: 100%;
   max-width: 1200px;
-  margin: 30px auto;
+  margin: 100px auto 30px; /* Отступ сверху под хедер */
   font-family: Manrope;
+  padding: 0 15px; /* Внутренние отступы, чтобы карточки не липли к краям */
+  box-sizing: border-box;
 }
 
 .question {
-  border: 1px solid gray;
-  border-radius: 10px;
-  padding: 15px 20px;
-  margin-bottom: 20px;
+  border: 1px solid #cbd5e1; /* Более мягкий цвет вместо gray */
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 15px;
   background-color: #fafafa;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-.qa-page h2,
-.qa-page .answer{
-    background-color: #fafafa;
+
+.question:hover {
+  border-color: #2463EB; /* Подсветка при наведении */
+}
+
+.question h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  color: #1e293b;
+  background-color: transparent; /* Убираем лишние заливки фона */
 }
 
 .answer {
   margin-top: 15px;
   line-height: 1.6;
-  background-color: #fafafa;
+  color: #475569;
+  font-size: 16px;
+  background-color: transparent;
 }
 
 .test-list {
-  padding-left: 30px;
+  padding-left: 20px;
   padding-top: 10px;
-  line-height: 23px;
-  background-color: #fafafa;
+  list-style-type: disc;
 }
 
-/* Адаптация под экран */
+.test-list li {
+  margin-bottom: 5px;
+}
+
+/* --- АДАПТИВКА --- */
+
 @media (max-width: 768px) {
   .qa-page {
-    width: 95%;
+    margin-top: 80px;
   }
 
   .question h2 {
@@ -47,12 +63,27 @@
   }
 }
 
-@media(max-width: 425px){
-    .qa-page{
-      width: 423px;
-    }
-    .question{
-      padding: 10px 15px;
-      margin: 15px 20px;
-    }
+@media (max-width: 425px) {
+  .qa-page {
+    width: 100%; /* Убираем 423px! Теперь страница резиновая */
+    padding: 0 10px;
+  }
+
+  .question {
+    padding: 15px;
+    margin: 10px 0; /* Убираем боковые маржины в 20px, используем паддинг родителя */
+  }
+
+  .question h2 {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .answer {
+    font-size: 14px;
+  }
+
+  .test-list {
+    padding-left: 15px;
+  }
 }

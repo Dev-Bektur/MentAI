@@ -1,55 +1,114 @@
-.regPage{
-    max-width: 900px;
+.regPage {
+    max-width: 500px; /* Уменьшил с 900, чтобы на ПК форма не была слишком пустой */
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     background-color: white;
-    border-radius: 6px;
-    margin: 0 auto;
-    padding: 50px 0;
+    border-radius: 12px;
+    margin: 100px auto 40px; /* Отступ сверху под фиксированный хедер */
+    padding: 40px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
 }
-.regPage h2{
-    background-color: white;
+
+.regPage h2 {
+    margin-bottom: 10px;
+    color: #1e293b;
 }
-input{
-    width: 350px;
-    height: 40px;
-    border: 1px solid gray;
-    border-radius: 4px;
-    padding: 12px 7px;
+
+.regPage input {
+    width: 100%; /* Теперь инпут занимает всё доступное место в форме */
+    max-width: 400px; /* Но не шире 400px на больших экранах */
+    height: 48px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0 15px;
     outline: none;
     background-color: white;
+    font-size: 16px; /* 16px предотвращает автоматический зум на iPhone */
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
 }
-.regButtons button:hover{
+
+.regPage input:focus {
+    border-color: #2463EB;
+}
+
+/* Стилизация инпута для файла */
+.regPage input[type="file"] {
+    padding-top: 10px;
+    border: 1px dashed #cbd5e1;
     cursor: pointer;
 }
-.clean{
-    width: 100px;
-    height: 40px;
+
+.regButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.clean {
+    background: none;
     border: none;
     text-decoration: underline;
-    background-color: white;
-    transition: all 0.3s ease-out;
+    color: #64748b;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.3s;
 }
-.clean:hover{
+
+.clean:hover {
     color: #2463EB;
     text-decoration: none;
 }
-.do{
-    width: 200px;
-    height: 40px;
-    border-radius: 4px;
+
+.do {
+    width: 220px;
+    height: 48px;
+    border-radius: 8px;
     background-color: #2463EB;
     color: white;
-    border: none;
+    border: 1px solid #2463EB;
     font-size: 16px;
-    font-weight: 400;
-    transition: all 0.3s ease-out;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-.do:hover{
+
+.do:hover {
     background-color: white;
     color: #2463EB;
-    border: 1px solid #2463EB;
+}
+
+/* --- АДАПТИВКА --- */
+
+@media (max-width: 480px) {
+    .regPage {
+        width: calc(100% - 30px); /* Небольшие отступы по бокам на мобилках */
+        margin-top: 80px;
+        padding: 30px 15px;
+    }
+
+    .regPage h2 {
+        font-size: 24px;
+    }
+
+    .regButtons {
+        flex-direction: column-reverse; /* Кнопка "Очистить" будет под кнопкой регистрации */
+        gap: 20px;
+    }
+
+    .do {
+        width: 100%; /* Кнопка на всю ширину для удобства нажатия */
+        max-width: 320px;
+    }
+
+    .clean {
+        padding: 10px;
+    }
 }

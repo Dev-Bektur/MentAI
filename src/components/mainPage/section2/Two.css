@@ -53,38 +53,65 @@
     padding: 12px 24px;
 }
 
-@media(max-width:425px){
-    .sec-2{
-        width: 425px;
-        display: flex;
-        flex-direction: column;
+/* Общие стили (Desktop) - оставляем как есть, но убираем жесткую высоту */
+.sec-2 {
+    max-width: 1100px;
+    width: 100%;
+    min-height: 200px; /* Используем min-height вместо height */
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Manrope;
+    padding: 0 20px; /* Чтобы карточки не липли к краям на планшетах */
+}
+
+/* Адаптив для всех мобильных устройств (от 425px и ниже) */
+@media (max-width: 768px) {
+    .sec-2 {
+        flex-direction: column; /* Карточки в колонку */
+        height: auto; /* Высота подстраивается под контент */
         gap: 20px;
-        height: 500px;
+        margin: 30px auto;
+        padding: 0 10px;
     }
-    .card{
-        width: 250px;
+
+    .card {
+        width: 100%; /* Карточка занимает всю ширину контейнера */
+        max-width: 320px; /* Но не становится огромной */
+        height: auto; /* Авто-высота, чтобы текст не вылезал */
+        padding-bottom: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05); /* Добавим объема */
     }
-    .card h3{
-        font-size: 16px;
+
+    .cardBook {
+        width: 100%; 
+        box-sizing: border-box;
     }
-    .cardBook{
-        width: 200px;
+
+    .cardBook p {
+        font-size: 18px; /* Чуть меньше для узких экранов */
     }
-    .cardBook p{
-        font-size: 18px;
-    }
-    .cardBook div img{
-        width: 35px;
-        height: 35px;
-    }
-    .cardBook div{
-        width: 43px;
-        height: 43px;
+
+    .card h3 {
+        padding: 10px 15px; /* Уменьшаем внутренние отступы */
+        font-size: 15px;
     }
 }
 
-@media(max-width:375px){
-    .sec-2{
-        width: 360px;
+/* Тонкая настройка для Mobile S (320px) */
+@media (max-width: 320px) {
+    .cardBook p {
+        font-size: 16px; /* Еще чуть меньше, чтобы текст "ИИ-план" не переносился */
+    }
+    
+    .cardBook div {
+        width: 45px; /* Уменьшаем иконку, чтобы сэкономить место */
+        height: 45px;
+    }
+
+    .cardBook div img {
+        width: 30px;
+        height: 30px;
     }
 }

@@ -78,3 +78,73 @@
     transform: scale(0.93);
     cursor: pointer;
 }
+
+/* --- ADAPTIVE --- */
+
+/* Планшеты и небольшие экраны */
+@media (max-width: 1023px) {
+    .ai-plan-card {
+        /* Убираем абсолютное позиционирование, чтобы карточка встала в поток под User */
+        position: static; 
+        margin: 20px auto;
+        max-width: 90%;
+        display: flex;
+        align-items: center;
+        right: auto;
+        top: auto;
+    }
+
+    .probnyiOrt {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+}
+
+/* Телефоны */
+@media (max-width: 425px) {
+    .userPage {
+        margin-top: 20px; /* Уменьшаем отступ сверху */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ai-plan-card {
+        position: static; /* Гарантируем, что карточка не прыгает */
+        width: 100%;
+        max-width: calc(100% - 30px); /* Отступы по бокам */
+        flex-direction: row; /* Иконка слева, текст справа */
+        padding: 12px;
+        gap: 10px;
+        margin: 15px auto;
+    }
+
+    .ai-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .ai-text h3 {
+        font-size: 16px;
+        padding-bottom: 5px; /* Уменьшаем огромные отступы */
+    }
+
+    .ai-text p {
+        font-size: 13px;
+        padding-top: 5px;
+    }
+
+    .probnyiOrt {
+        width: 100%;
+        height: auto; /* Убираем фиксированную высоту 200px */
+        margin-top: 20px;
+        padding-bottom: 40px;
+    }
+
+    .probnyiOrt button {
+        width: 100%; /* Кнопка на всю ширину для удобства нажатия */
+        max-width: 280px;
+    }
+}

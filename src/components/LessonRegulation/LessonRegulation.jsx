@@ -53,7 +53,6 @@ function LessonRegulation() {
 
   return (
     <div className="lessonRegulation-wrapper">
-       <div className='   '><PremiumVersion/></div> 
 <h1>{t("graphic")}</h1>
       <div className='lessonRegulation'>
         

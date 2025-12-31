@@ -8,7 +8,7 @@ function Contact() {
     <div className='contactPage'>
       <p>{t("contact")}:</p>
       <p>
-        Телефон номер: <span>+996 553 518121</span>
+        Телефон номер: <span>+996500142319</span>
       </p>
     </div>
   )

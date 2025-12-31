@@ -26,7 +26,7 @@ function SectionOne() {
     <section className='sec-1'>
       <div className='secOne-left'>
         <div className='bilimHub'>
-          <h1>BilimHub</h1>
+          <h1>MentAI</h1>
           <p>
             {t("bilimhub")}
           </p>

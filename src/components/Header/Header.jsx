@@ -96,7 +96,7 @@ function Header() {
 
           {isLoggedIn ? (
             <Link to="/profile">
-              <button className="user"><img src="https://cdn-icons-png.flaticon.com/512/9187/9187532.png" alt="" /></button>
+              <button className="user">{t("profile")}</button>
             </Link>
           ) : (
             <>

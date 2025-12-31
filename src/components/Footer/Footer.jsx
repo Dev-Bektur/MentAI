@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer>
       <div className='foot-left'>
-        <Link to=""><h2>BilimHub</h2></Link>
+        <Link to=""><h2>MentAI</h2></Link>
         <p>{t("prepare")}</p>
         <p>{t("modern")}</p>
       </div>

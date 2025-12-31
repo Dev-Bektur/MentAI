@@ -1,16 +1,17 @@
-footer{
+footer {
     width: 100%;
     max-width: 1440px;
-    height: 90px;
-    margin: 0 auto;
+    /* Убираем фиксированную высоту height: 300px */
+    min-height: 200px; 
+    margin: 50px auto 0;
     border-top: 1px solid #64748B;
-    margin-top: 30px;
-    padding: 0 40px;
+    padding: 60px 40px; /* Упростили запись padding */
     font-family: Manrope;
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    box-sizing: border-box; /* Важно, чтобы padding не расширял футер */
 }
 
 .foot-left{
@@ -21,6 +22,9 @@ footer{
 .foot-left a{
     text-decoration: none;
     color: #020817;
+}
+.foot-left p{
+    margin-top: 10px;
 }
 
 .foot-right{
@@ -40,36 +44,68 @@ footer{
     margin-bottom: 15px;
 }
 
-@media(max-width:425px){
-    footer{
-        width: 425px;
+/* Адаптив для мобильных (от 768px и ниже) */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 30px; /* Расстояние между левой и правой частью */
+    }
+
+    .foot-left {
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .foot-left h2 {
+        font-size: 24px;
+    }
+
+    .foot-left p {
+        font-size: 15px;
+        line-height: 1.5;
+        max-width: 300px; /* Чтобы текст не растягивался слишком сильно */
+        margin: 10px auto 0;
+    }
+
+    .foot-right {
+        margin-top: 0;
+        width: 100%;
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .soc-media img{
-        width: 25px;
-        height: 25px;
+
+    .soc-media {
+        justify-content: center;
+        margin-bottom: 10px;
     }
-    .foot-left h2{
-        font-size: 20px;
+
+    .soc-media img {
+        width: 28px;
+        height: 28px;
+        margin-bottom: 0; /* Убираем лишний отступ снизу у иконок */
     }
-    .foot-left p{
-        font-size: 16px;
-        line-height: 22px;
-    }
-    .foot-right p{
-        font-size: 16px;
-    }
-    .foot-right{
-        width: 350px;
+
+    .foot-right p {
+        font-size: 14px;
+        color: #64748B;
     }
 }
 
-@media(max-width: 375px){
-    footer{
-        width: 375px;
+/* Тонкая настройка для Mobile S (320px) */
+@media (max-width: 320px) {
+    footer {
+        padding: 30px 15px;
     }
-    .foot-right{
-        width: 300px;
+    
+    .foot-left h2 {
+        font-size: 20px;
+    }
+
+    .foot-left p {
+        font-size: 14px;
     }
 }

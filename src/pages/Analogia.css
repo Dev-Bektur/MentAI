@@ -1,33 +1,78 @@
-.answersAnalog{
-    max-width: 600px;
+.testWindow {
+    max-width: 800px;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-.answersAnalog button{
-    width: 130px;
-    height: 40px;
-    border: 1px solid gray;
-    border-radius: 6px;
-    transition: all 0.3s ease-out;
-}
-.answersAnalog button:hover{
-    margin-top: -6px;
-    background-color: #a5b4fc;
-    border: none;
+    margin: 100px auto 40px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    font-family: Manrope;
+    box-sizing: border-box;
 }
 
-@media(max-width:425px){
-    .answersAnalog{
-        width: 415px;
+.testQuestion {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.answersAnalog {
+    display: grid; /* Используем Grid для четкой сетки */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.answersAnalog button {
+    width: 100%; /* Кнопка занимает всю ячейку грида */
+    min-height: 50px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+/* Адаптив для планшетов и мобилок */
+@media (max-width: 768px) {
+    .testWindow {
+        margin-top: 80px;
+        padding: 20px;
+        width: calc(100% - 20px);
     }
-    .answersAnalog button{
-        width: 95px;
-        height: 45px;
-        font-size: 12px;
+
+    .answersAnalog {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки вместо 4 */
     }
-    .kgTestTime{
-        font-size: 18px;
-        margin-bottom: 10px;
+}
+
+@media (max-width: 425px) {
+    .testQuestion {
+        font-size: 20px;
+    }
+
+    .kgTestTime {
+        font-size: 16px;
+        text-align: center;
+        color: #ef4444; /* Сделаем таймер заметнее */
+    }
+
+    .answersAnalog button {
+        font-size: 13px;
+        padding: 5px;
+    }
+}
+
+/* Для самых маленьких (320px) */
+@media (max-width: 320px) {
+    .answersAnalog {
+        grid-template-columns: 1fr; /* 1 колонка, если текст очень длинный */
+    }
+    
+    .testCount {
+        font-size: 14px;
     }
 }

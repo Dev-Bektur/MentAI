@@ -151,54 +151,110 @@
     }
 }
 
-@media(max-width: 425px){
+@media (max-width:1024px) and (min-width:768px){
     .sec-1{
-        width: 425px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-    }
-    .secOne-right{
-        width: 400px;
-
-        p{
-            width: 380px;
-        }
-    }
-}
-@media(max-width: 375px){
-    .sec-1{
-        width: 360px;
+        width: 100%;
     }
     .secOne-left{
-        width: 360px;
-
-        .bilimHub {
-            width: 350px;
-            h1{
-                font-size: 32px;
-            }
-            p{
-                font-size: 14px;
-            }
-        }
-    }
-    .secOne-right{
-        width: 360px;
-    }
-    .toTestBtn{
-        width: 180px;
-
-        img{
-            display: none;
-        }
-    }
-    .visitPlan{
         width: 300px;
+        gap: 20px;
     }
-    .planShow{
-        width: 300px;
+}
+@media (max-width: 767px) {
+  .sec-1 {
+    flex-direction: column; // Складываем левую и правую части друг под друга
+    padding: 20px 15px;
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+
+    .secOne-left {
+      width: 100%; // Теперь занимает всю ширину мобильного экрана
+      align-items: center;
+
+      .bilimHub {
+        h1 {
+          font-size: 32px; // Уменьшаем заголовок для мобилок
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+
+      .toTestBtn {
+        margin: 0 auto; // Центрируем кнопку
+      }
+
+      .buklet {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+
+        div {
+          width: auto; // Убираем фиксированную ширину
+          padding-right: 10px;
+          border-right: 1px solid #64748b;
+
+          h3 {
+            font-size: 18px;
+          }
+          p {
+            font-size: 11px;
+          }
+        }
+        
+        .div3 {
+          border-right: none; // У последнего элемента убираем палочку
+        }
+      }
     }
+
+    .secOne-right {
+      width: 100%;
+      max-width: 100%;
+      padding: 20px 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); // Немного выделим блок
+
+      .plan {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 0;
+        
+        h2 {
+          font-size: 20px;
+        }
+      }
+
+      p {
+        max-width: 100%;
+        font-size: 15px;
+        padding: 0 10px;
+      }
+
+      .planShow {
+        width: 90%;
+        margin: 10px auto; // Центрируем и убираем твой margin-left: 55px
+        margin-left: auto; 
+      }
+    }
+  }
+}
+
+/* Специфичные правки для маленьких экранов (Mobile S: 320px) */
+@media (max-width: 360px) {
+  .sec-1 {
+    .secOne-left .buklet {
+      flex-wrap: wrap; // Если цифры не влезают в ряд, они перенесутся
+      justify-content: center;
+      
+      div {
+          border-right: none;
+          margin-bottom: 10px;
+      }
+    }
+    
+    .secOne-left .bilimHub h1 {
+        font-size: 28px;
+    }
+  }
 }

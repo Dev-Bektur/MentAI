@@ -1,61 +1,85 @@
-.watchLesson{
+.watchLesson {
     max-width: 1440px;
     width: 100%;
-    margin: 20px auto;
+    margin: 100px auto 30px; 
+    padding: 0 20px;
+    box-sizing: border-box;
     font-family: Manrope;
 }
-.watchLesson h1{
+
+.watchLesson h1 {
     text-align: center;
+    margin-bottom: 20px;
 }
-.lessonList{
-    width: 1150px;
+
+.lessonList {
+    max-width: 1150px;
+    width: 100%;
     margin: 30px auto;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    justify-content: space-between;
-    align-items: center;
+    /* Центрируем карточки, если в ряду остается одна */
+    justify-content: center; 
 }
-.lessonList a{
+
+.lessonList a {
     color: black;
+    text-decoration: none;
     width: 150px;
     height: 120px;
     border-radius: 8px;
     background-color: #86efac;
     
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     padding: 15px;
+    box-sizing: border-box;
 
     transition: all 0.4s ease-in-out;
 }
 
-.lessonList a:hover{
-    transform: scale(0.92);
-    rotate: 4deg;
+/* Эффекты при наведении */
+.lessonList a:hover {
+    transform: scale(0.92) rotate(4deg);
     color: white;
+    background-color: #22c55e; /* Немного затемняем при наведении */
 }
 
+/* --- АДАПТИВ --- */
 
-@media(max-width:425px){
-    .watchLesson{
-        width: 425px;
-    }
-    .watchLesson h1{
-        font-size: 26px;
-    }
-    .lessonList{
-        width: 350px;
-        gap: 20px;
+@media (max-width: 768px) {
+    .watchLesson {
+        margin-top: 80px;
     }
 }
 
-@media(max-width: 375px){
-    .watchLesson{
-        width: 375px;
-        margin-left: 20px;
+@media (max-width: 480px) {
+    .watchLesson h1 {
+        font-size: 24px;
     }
-    .lessonList{
-        width: 330px;
+
+    .lessonList {
+        gap: 10px;
+    }
+
+    .lessonList a {
+        /* Делаем ровно две колонки на любых смартфонах */
+        width: calc(50% - 10px); 
+        height: 100px;
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Для самых маленьких экранов (320px) */
+@media (max-width: 320px) {
+    .lessonList {
+        gap: 8px;
+    }
+    
+    .lessonList a {
+        width: calc(50% - 7px);
+        font-size: 13px;
     }
 }

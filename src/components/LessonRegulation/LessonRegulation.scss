@@ -5,24 +5,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 15px; // Внутренние отступы для мобилок
+  box-sizing: border-box;
+
+  h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
 }
 
 .lessonRegulation {
   width: 100%;
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  // На компьютере 5 колонок, на планшете 2-3, на мобилке 1
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
   gap: 15px;
 }
 
 .lessonCard {
   background: #f7faff;
-  padding: 15px;
+  padding: 18px;
   border-radius: 14px;
   border: 1px solid #dce6ff;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.3s ease;
   box-shadow: 0px 4px 12px rgba(36, 99, 235, 0.08);
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     transform: translateY(-4px);
@@ -31,57 +42,98 @@
   }
 
   h3 {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: #2463eb;
     font-weight: 700;
-    background-color: #f7faff;
+    font-size: 18px;
   }
 
   p {
-    margin: 4px 0;
+    margin: 5px 0;
     font-size: 14px;
-    background-color: #f7faff;
+    line-height: 1.4;
+    color: #475569;
+
+    strong {
+      color: #1e293b;
+    }
   }
 }
 
 .lesson-buttons {
-  margin-top: 30px;
+  margin-top: 40px;
   display: flex;
+  flex-wrap: wrap; // Чтобы кнопки переносились на мобилках
+  justify-content: center;
   gap: 15px;
+  width: 100%;
 }
 
 .btn {
-  padding: 10px 22px;
-  border-radius: 10px;
+  padding: 14px 25px;
+  border-radius: 12px;
   font-size: 16px;
-  cursor: pointer;
-  border: none;
+  font-weight: 600;
+  text-decoration: none; // Убираем подчеркивание Link
+  text-align: center;
   transition: 0.2s;
+  min-width: 160px;
 }
 
+// --- Цвета кнопок ---
 .btn.blue {
   background: #2463eb;
   color: white;
-
-  &:hover {
-    background: #1f54c7;
-  }
+  &:hover { background: #1f54c7; }
 }
 
 .btn.light {
   background: #e9efff;
   color: #2463eb;
-
-  &:hover {
-    background: #d8e0ff;
-  }
+  &:hover { background: #d8e0ff; }
 }
 
 .btn.darkblue {
   background: #1b3fa2;
   color: white;
+  &:hover { background: #163583; }
+}
 
-  &:hover {
-    background: #163583;
+/* --- ADAPTIVE --- */
+
+@media (max-width: 1024px) {
+  .lessonRegulation {
+    grid-template-columns: repeat(3, 1fr); // 3 колонки на планшетах
+  }
+}
+
+@media (max-width: 768px) {
+  .lessonRegulation {
+    grid-template-columns: repeat(2, 1fr); // 2 колонки на мини-планшетах
+  }
+  
+  .lessonRegulation-wrapper h1 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lessonRegulation {
+    grid-template-columns: 1fr; // 1 колонка на смартфонах
+    gap: 12px;
+  }
+
+  .lessonCard {
+    padding: 15px;
+  }
+
+  .lesson-buttons {
+    flex-direction: column; // Кнопки одна под другой
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%; // Кнопки на всю ширину для удобства нажатия
+    font-size: 15px;
   }
 }

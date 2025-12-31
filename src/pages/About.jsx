@@ -6,15 +6,15 @@ function About() {
   const {t} = useTranslation();
   return (
     <div className='aboutUs'>
-      <h1>{t("about")} — <span>BilimHub</span></h1>
+      <h1>{t("about")} — <span>MentAI</span></h1>
 
-<p><span>BilimHub</span> — {t("bilimHub")}</p>
+<p><span>MentAI</span> — {t("bilimHub")}</p>
 
 
 
 <h1>{t("mission")}</h1>
 
-<p>{t("text")} <span>BilimHub</span> {t("text1")}</p>
+<p>{t("text")} <span>MentAI</span> {t("text1")}</p>
 
 
 <h1>{t("approach")}</h1>
@@ -26,7 +26,7 @@ function About() {
 </ul>
 
 
-<h1>{t("why")} <span>BilimHub</span></h1>
+<h1>{t("why")} <span>MentAI</span></h1>
 <ul>
   <li>{t("text6")}</li>
   <li>{t("text7")}</li>
@@ -48,7 +48,7 @@ function About() {
 
 <p className='goalText'>{t("text14")}</p>
 
-<p className='goalText'><span>BilimHub</span>  — {t("text15")}</p>
+<p className='goalText'><span>MentAI</span>  — {t("text15")}</p>
     </div>
   )
 }

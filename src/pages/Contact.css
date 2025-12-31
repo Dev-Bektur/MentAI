@@ -1,18 +1,39 @@
-.contactPage{
+.contactPage {
     max-width: 1250px;
     width: 100%;
-    margin: 30px auto;
+    /* Добавляем отступ сверху под хедер и по бокам для мобилок */
+    margin: 100px auto 30px; 
+    padding: 0 20px;
+    box-sizing: border-box;
     font-family: Manrope;
 }
 
-p{
+.contactPage p {
     font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.5;
 }
-p span{
+
+.contactPage p span {
     font-weight: 500;
+    color: #2463EB; /* Выделим номер цветом, чтобы было понятно, что это контакт */
+    transition: all 0.2s ease;
 }
-p span:hover{
-    cursor: default;
-    text-decoration:  underline;
-    font-weight: 600;
+
+/* На мобилках hover не работает, поэтому добавим стили для ссылок */
+.contactPage a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Адаптив для Mobile L, M, S */
+@media (max-width: 768px) {
+    .contactPage {
+        margin-top: 80px; /* Чуть меньше отступ на мобильных */
+        text-align: center; /* Центрируем контакты для удобства */
+    }
+
+    .contactPage p {
+        font-size: 16px;
+    }
 }
