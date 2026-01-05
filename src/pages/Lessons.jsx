@@ -8,8 +8,8 @@ function Lessons() {
   const {t} = useTranslation();
   return (
     <div className='lessonPage'>
-      <Link to="/subject" className='toTheLesson'>{t("lesson")}</Link>
-      <Link to="/newSubject" className='toTheHomework'>{t("hw")}</Link>
+      <Link to="/subjects" className='toTheLesson'>{t("lesson")}</Link>
+      <Link to="/subOfHw" className='toTheHomework'>{t("hw")}</Link>
     </div>
   )
 }

@@ -9,6 +9,7 @@ import PremiumVersion from '../components/PremiumVersion/PremiumVersion'
 
 function Profile() {
   const {t} = useTranslation();
+  
 
   return (
     <div className='userPage'>

@@ -13,14 +13,16 @@ import Register from "./pages/Register";
 import MathTest from "./pages/MathTest";
 import KyrgyzTest from "./pages/KyrgyzTest";
 import Admin from "./pages/Admin";
-import LessonWatch from "./pages/LessonWatch";
-import Homeworks from "./pages/Homeworks";
 import ChatBot from "./pages/ChatBot";
 import PlanFromAI from "./pages/PlanFromAI";
-import Subject from "./pages/Subject";
-import SubjectHw from "./pages/SubjectHw";
-import FirstLesson from "./pages/LessonList/FirstLesson";
 import AboutPremium from "./pages/AboutPremium";
+import ToTheLesson from "./pages/ToTheLesson";
+import ToTheHw from "./pages/ToTheHw";
+import LessonDetail from "./pages/LessonDetail";
+import HwDetail from "./pages/HwDetail";
+import Quest from "./pages/Quest";
+import Subjects from "./pages/Subjects";
+import SubjectsOfHw from "./pages/SubjectsOfHw";
 
 const myRouter = createBrowserRouter([
     {
@@ -80,14 +82,6 @@ const myRouter = createBrowserRouter([
                 element:<Admin/>
             },
             {
-                path: "watchLesson",
-                element: <LessonWatch/>
-            },
-            {
-                path: "homework",
-                element: <Homeworks/>
-            },
-            {
                 path: "chatBot",
                 element: <ChatBot/>
             },
@@ -96,20 +90,36 @@ const myRouter = createBrowserRouter([
                 element: <PlanFromAI/>
             },
             {
-                path: "subject",
-                element: <Subject/>
-            },
-            {
-                path: "newSubject",
-                element: <SubjectHw/>
-            },
-            {
                 path: "aboutPre",
                 element: <AboutPremium/>
             },
             {
-                path: "firstLesson",
-                element: <FirstLesson/>
+                path: "totheL",
+                element: <ToTheLesson/>
+            },
+            {
+                path: "totheH",
+                element: <ToTheHw/>
+            },
+            {
+                path: "lesson/:id",
+                element: <LessonDetail/>
+            },
+            {
+                path: "homew/:id",
+                element: <HwDetail/>
+            },
+            {
+                path: "quest/:id",
+                element: <Quest/>
+            },
+            {
+                path: "subjects",
+                element: <Subjects/>
+            },
+            {
+                path: "subOfHw",
+                element: <SubjectsOfHw/>
             }
         ]
     }

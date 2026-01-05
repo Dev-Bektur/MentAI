@@ -19,11 +19,13 @@
     height: 250px;
     border-radius: 12px;
 
-    font-size: 20px;
+    font-size: 18px;
     padding-left: 25px;
-    padding-top: 175px;
+    padding-top: 155px;
     padding-right: 10px;
     color: white;
+
+    box-shadow: 6px 8px 14px gray;
 }
 .studyStep5{
     background-color: #2463EB;

@@ -15,19 +15,20 @@ function Register() {
   const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
   const isValidPhone = (phone) => /^[+]?\d{7,15}$/.test(phone)
 
-  const handleRegister = (e) => {
+const handleRegister = async (e) => {
     e.preventDefault()
 
+    // 1. Валидация
     if (!name || !email || !phone || !password) {
       toast.error('Заполните все поля!')
       return
     }
     if (!isValidEmail(email)) {
-      toast.error('Проверьте эл. почту и попробуйте снова!')
+      toast.error('Проверьте эл. почту!')
       return
     }
     if (!isValidPhone(phone)) {
-      toast.error('Проверьте номер телефона и попробуйте снова!')
+      toast.error('Проверьте номер телефона!')
       return
     }
 
@@ -41,20 +42,38 @@ function Register() {
         : 'https://cdn-icons-png.flaticon.com/512/8847/8847419.png',
     }
 
-    localStorage.setItem('user', JSON.stringify(userData))
+    try {
+      // 2. Отправка на сервер
+      const response = await fetch('http://localhost:5000/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(userData)
+      })
 
-    const users = JSON.parse(localStorage.getItem('users')) || []
-    users.push(userData)
-    localStorage.setItem('users', JSON.stringify(users))
+      const data = await response.json();
 
-    toast.success('Регистрация прошла успешно!')
+      if (response.ok) {
+        // 3. СОХРАНЯЕМ ДАННЫЕ ИЗ БАЗЫ (userId очень важен!)
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('userName', data.userName);
+        localStorage.setItem('userId', data.userId); // Тот самый ID для квестов
+        localStorage.setItem('user', JSON.stringify(userData));
 
-    // 👇 обновляем Header
-    window.dispatchEvent(new Event('userChange'))
+        toast.success('Регистрация прошла успешно! Ты в базе.');
 
-    setTimeout(() => {
-      navigate('/profile')
-    }, 1500)
+        // 4. Оповещаем другие компоненты (например, Header)
+        window.dispatchEvent(new Event('userChange'))
+
+        setTimeout(() => {
+          navigate('/profile')
+        }, 1500)
+      } else {
+        toast.error('Ошибка: ' + data.message);
+      }
+    } catch (error) {
+      console.error("Ошибка при регистрации:", error);
+      toast.error('Не удалось связаться с сервером');
+    }
   }
 
   const handleClear = () => {

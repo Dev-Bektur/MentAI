@@ -43,6 +43,10 @@
     font-size: 14px;
 }
 
+.rankingUser p{
+    font-size: 18px;  
+}
+
 .logoutButton {
     padding: 10px 24px;
     background-color: #fee2e2; /* Светло-красный фон */

@@ -1,0 +1,82 @@
+.subjects-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.subjects-page h1 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.subjects-grid {
+    display: grid;
+    /* Создаем сетку: минимум 250px на карточку */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.subject-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 5px solid var(--subject-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.subject-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    background-color: var(--subject-color);
+}
+
+.subject-card:hover h3, 
+.subject-card:hover p,
+.subject-card:hover .subject-icon {
+    color: white;
+}
+
+.subject-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.subject-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.subject-card p {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* ————— АДАПТИВКА ————— */
+
+@media (max-width: 768px) {
+    .subjects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    
+    .subject-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .subjects-grid {
+        grid-template-columns: 1fr; /* На телефонах карточки в одну колонку */
+    }
+    
+    .subjects-page h1 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,97 @@
+p{
+    color: black;
+}
+.backBtn{
+    width: 100px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    margin-left: 80px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    cursor: pointer;
+
+    transition: all 0.3s ease-in;
+}
+.backBtn:hover{
+    background-color: gray;
+    color: #fff;
+    transform: scale(0.93);
+}
+h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.videoScreen{
+    max-width: 800px;
+    width: 100%;
+    height: 450px;
+    background-color: #001f3f; 
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 15px;
+}
+.lessonBtns{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+.didntUnderstood{
+    background-color: #ff4b2b;
+    padding: 15px 30px; 
+    color: white; 
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+}
+.toHw{
+    background-color: #007bff;
+    padding: 15px 30px; 
+    color: white; 
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .backBtn {
+        margin-left: 20px; /* Уменьшаем отступ, чтобы кнопка не улетела */
+    }
+
+    .videoScreen {
+        height: 250px; /* Уменьшаем высоту видео, чтобы оно не занимало весь экран */
+        width: 95%;
+    }
+
+    .lessonBtns {
+        flex-direction: column; /* Кнопки встают друг под друга */
+        align-items: center;
+        gap: 15px;
+    }
+
+    .didntUnderstood, .toHw {
+        width: 80%; /* Кнопки становятся широкими и удобными для нажатия пальцем */
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px; /* Уменьшаем шрифт заголовка */
+        margin-bottom: 30px;
+    }
+}
+
+/* Для совсем маленьких телефонов (меньше 480px) */
+@media (max-width: 480px) {
+    .videoScreen {
+        height: 200px;
+    }
+    
+    .didntUnderstood, .toHw {
+        width: 90%;
+        padding: 12px 20px;
+    }
+}

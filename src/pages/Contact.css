@@ -7,6 +7,9 @@
     box-sizing: border-box;
     font-family: Manrope;
 }
+.contactPage h2{
+    margin-bottom: 30px;
+}
 
 .contactPage p {
     font-size: 18px;
@@ -18,6 +21,7 @@
     font-weight: 500;
     color: #2463EB; /* Выделим номер цветом, чтобы было понятно, что это контакт */
     transition: all 0.2s ease;
+    margin-left: 10px;
 }
 
 /* На мобилках hover не работает, поэтому добавим стили для ссылок */

@@ -17,10 +17,10 @@ function Test() {
     { name: "Русский язык", path: "/rus", key: "rus" },
     { name: "Кыргызский тил(аналогия)", path: "/kyrgyz", key: "kyrgyz" },
     { name: "Окуу жана түшүнүү(чтение и понимание)", path: "/kyrgyz_read", key: "kyrgyz_read" },
-    { name: "English", path: "/eng", key: "eng", permission: "Premium версия" },
-    { name: "Химия", path: "/chemistry", key: "chemistry" , permission: "Premium версия"},
-    { name: "Биология", path: "/biology", key: "biology", permission: "Premium версия" },
-    { name: "Физика", path: "/physics", key: "physics", permission: "Premium версия" }
+    { name: "English", path: "/eng", key: "eng", permission: "Недоступно в данный момент" },
+    { name: "Химия", path: "/chemistry", key: "chemistry" , permission: "Недоступно в данный момент"},
+    { name: "Биология", path: "/biology", key: "biology", permission: "Недоступно в данный момент" },
+    { name: "Физика", path: "/physics", key: "physics", permission: "Недоступно в данный момент" }
   ]
 
   return (

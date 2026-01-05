@@ -2,7 +2,6 @@ import React from 'react'
 import './LessonRegulation.scss'
 import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from "react-i18next";
-import PremiumVersion from '../PremiumVersion/PremiumVersion';
 
 function LessonRegulation() {
   const navigate = useNavigate()
@@ -74,7 +73,7 @@ function LessonRegulation() {
 
       {/* КНОПКИ */}
       <div className="lesson-buttons">
-        <Link to="/lesson" className="btn blue">{t("seeLesson")}</Link>
+        <Link to=""><div className="btn blue">{t("seeLesson")}</div></Link>
         <Link to="/lesson" className="btn light">{t("seeHw")}</Link>
         <Link to="/test" className="btn darkblue">{t("startTest")}</Link>
       </div>

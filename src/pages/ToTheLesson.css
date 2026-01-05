@@ -1,0 +1,81 @@
+.numberlesson {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px; /* Добавил отступ, чтобы карточки не липли к краям экрана */
+}
+
+.lessons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.lessons-container a {
+    text-decoration: none;
+}
+
+.lessonlist {
+    width: 200px;
+    height: 150px;
+    background-color: #47e280;
+    border-radius: 12px;
+    display: flex;
+    align-items: end;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    font-size: 20px;
+    color: #F7E7CE;
+    box-shadow: 4px 4px 8px gray;
+    transition: transform 0.2s ease; /* Плавный эффект при нажатии */
+}
+
+.lessonlist:hover {
+    transform: translateY(-5px); /* Карточка чуть приподнимается при наведении */
+}
+
+/* ————— АДАПТИВНАЯ ВЕРСТКА ————— */
+
+/* Для планшетов (iPad и средние экраны) */
+@media (max-width: 768px) {
+    .lessons-container {
+        gap: 20px; /* Уменьшаем расстояние между карточками */
+    }
+    
+    .lessonlist {
+        width: 180px; /* Немного уменьшаем ширину */
+        height: 130px;
+        font-size: 18px;
+    }
+}
+
+/* Для мобильных телефонов */
+@media (max-width: 480px) {
+    .numberlesson {
+        padding: 10px;
+    }
+
+    .lessons-container {
+        gap: 15px;
+    }
+
+    .lessonlist {
+        /* На очень маленьких экранах делаем по 2 карточки в ряд 
+           или по 1, если экран совсем узкий */
+        width: 140px; 
+        height: 110px;
+        padding-left: 15px;
+        padding-bottom: 15px;
+        font-size: 16px;
+    }
+}
+
+/* Если экран совсем крошечный (старые iPhone) */
+@media (max-width: 350px) {
+    .lessonlist {
+        width: 100%; /* Карточка на всю ширину экрана */
+        max-width: 280px;
+    }
+}
