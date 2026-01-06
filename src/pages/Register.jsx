@@ -16,6 +16,14 @@ function Register() {
   const isValidPhone = (phone) => /^[+]?\d{7,15}$/.test(phone)
 
 const handleRegister = async (e) => {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/register`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(userData)
+  });
+
+  // =======
+  
     e.preventDefault()
 
     // 1. Валидация
@@ -44,7 +52,7 @@ const handleRegister = async (e) => {
 
     try {
       // 2. Отправка на сервер
-      const response = await fetch('http://localhost:5000/api/register', {
+      const response = await fetch('https://mentai-server.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userData)

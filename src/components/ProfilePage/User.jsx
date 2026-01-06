@@ -15,7 +15,7 @@ function User() {
 
       try {
         // Пробуем взять свежие данные с сервера
-        const res = await fetch(`http://localhost:5000/api/user/${userId}`);
+        const res = await fetch(`https://mentai-server.onrender.com/user/${userId}`);
         const data = await res.json();
         
         setUserData({
