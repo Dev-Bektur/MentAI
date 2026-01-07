@@ -1,26 +1,24 @@
 import { useEffect, useState } from 'react';
 import { RouterProvider } from 'react-router-dom';
-import myRouter from './router'; // Убедись, что путь к router правильный
+import myRouter from './router'; 
 import './App.css';
 
 function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Проверяем данные в браузере
     const loggedIn = localStorage.getItem('isLoggedIn');
     const name = localStorage.getItem('userName');
     const id = localStorage.getItem('userId');
+    const role = localStorage.getItem('userRole'); // Достаем роль
 
     if (loggedIn === 'true' && name && id) {
-      setUser({ name, id });
+      setUser({ name, id, role });
     }
   }, []);
 
   return (
     <div className="App">
-      {/* Передаем состояние пользователя в RouterProvider если нужно, 
-          но пока просто рендерим роутер */}
       <RouterProvider router={myRouter} />
     </div>
   );

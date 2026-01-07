@@ -23,6 +23,8 @@ import HwDetail from "./pages/HwDetail";
 import Quest from "./pages/Quest";
 import Subjects from "./pages/Subjects";
 import SubjectsOfHw from "./pages/SubjectsOfHw";
+import ProfileRedirect from "./pages/ProfileRedirect";
+import TeacherDashboard from "./pages/TeacherDashboard";
 
 const myRouter = createBrowserRouter([
     {
@@ -120,6 +122,14 @@ const myRouter = createBrowserRouter([
             {
                 path: "subOfHw",
                 element: <SubjectsOfHw/>
+            },
+            {
+                path: "profileTeacher",
+                element: <ProfileRedirect/>
+            },
+            {
+                path: "teacher-dashboard",
+                element: <TeacherDashboard/>
             }
         ]
     }

@@ -90,8 +90,8 @@ function Header() {
 
         <div className="mobile-bottom">
           <select onChange={change}>
-            <option value="kg">KGZ</option>
             <option value="ru">RUS</option>
+            <option value="kg">KGZ</option>
           </select>
 
           {isLoggedIn ? (
