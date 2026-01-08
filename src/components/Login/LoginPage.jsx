@@ -36,36 +36,21 @@ function LoginPage() {
       }
 
       if (response.ok) {
-        // 1. Сохраняем статус и роль
-        localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('userRole', data.role);
-        
-        // 2. Сохраняем данные пользователя
-        localStorage.setItem('user', JSON.stringify(data.user));
-        localStorage.setItem('userId', data.user._id);
-        
-        // 3. Сохраняем Менткоины и Ранг (чтобы в личном кабинете сразу были цифры)
-        localStorage.setItem('mentCoins', data.user.mentCoins || '0');
-        localStorage.setItem('userRank', data.user.rank || 'Новичок');
+  localStorage.setItem('isLoggedIn', 'true');
+  localStorage.setItem('userRole', data.role);
+  localStorage.setItem('user', JSON.stringify(data.user));
+  localStorage.setItem('userId', data.user._id);
+  
+  // ИСПОЛЬЗУЕМ String(), чтобы данные всегда сохранялись корректно
+  // Если у пользователя в базе нет монет, ставим '0'
+  const coins = data.user.mentCoins !== undefined ? String(data.user.mentCoins) : '0';
+  localStorage.setItem('mentCoins', coins);
+  
+  localStorage.setItem('userRank', data.user.rank || 'Новичок');
 
-        toast.success(`С возвращением, ${data.user.name}!`);
-
-        // 4. Уведомляем систему (Header и другие компоненты) об изменениях
-        window.dispatchEvent(new Event('userChange'));
-
-        // 5. Перенаправление в зависимости от роли
-        setTimeout(() => {
-          const role = data.role;
-          if (role === 'teacher') {
-            navigate('/teacher-dashboard');
-          } else if (role === 'visitor') {
-            navigate('/');
-          } else {
-            navigate('/profile');
-          }
-        }, 1200);
-
-      } else {
+  toast.success(`С возвращением, ${data.user.name}!`);
+  window.dispatchEvent(new Event('userChange'));
+} else {
         // Ошибка от сервера (например, неверный пароль)
         toast.error(data.message || 'Ошибка входа');
       }
