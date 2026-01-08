@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // 1. Импортируем navigate
 import { toast } from 'react-toastify';
 import './TeacherDashboard.css';
 import { useTranslation } from 'react-i18next'
 
 function TeacherDashboard() {
   const {t, i18n} = useTranslation();
-  const [activeTab, setActiveTab] = useState('dashboard'); // 'dashboard' или 'courses'
+  const navigate = useNavigate(); // 2. Инициализируем navigate
+
+  const [activeTab, setActiveTab] = useState('dashboard');
   const [completedLessons, setCompletedLessons] = useState(JSON.parse(localStorage.getItem('completedLessons')) || []);
   const [courses, setCourses] = useState(JSON.parse(localStorage.getItem('teacherCourses')) || []);
   
@@ -15,23 +18,32 @@ function TeacherDashboard() {
   const user = JSON.parse(localStorage.getItem('user')) || {};
   const WHATSAPP_URL = "https://wa.me/79000000000";
 
-  // Сохранение данных
   useEffect(() => {
     localStorage.setItem('completedLessons', JSON.stringify(completedLessons));
     localStorage.setItem('teacherCourses', JSON.stringify(courses));
   }, [completedLessons, courses]);
 
-  // Функции для Журнала
   const handleFinishLesson = (e) => {
     e.preventDefault();
     if (!lessonName.trim()) return toast.warning("Введите тему");
-    const newEntry = { id: Date.now(), title: lessonName, date: new Date().toLocaleDateString(), time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), status: "Пройдено" };
+    const newEntry = { 
+      id: Date.now(), 
+      title: lessonName, 
+      date: new Date().toLocaleDateString(), 
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), 
+      status: "Пройдено" 
+    };
     setCompletedLessons([newEntry, ...completedLessons]);
     setLessonName("");
     toast.success("Урок записан");
   };
 
-  // Функции для Курсов
+  // 3. Добавляем функцию удаления из истории (ее не было)
+  const deleteHistoryItem = (id) => {
+    setCompletedLessons(completedLessons.filter(item => item.id !== id));
+    toast.info("Запись удалена");
+  };
+
   const addCourse = (e) => {
     e.preventDefault();
     if (!courseData.title || !courseData.link) return toast.warning("Заполните все поля");
@@ -46,7 +58,19 @@ function TeacherDashboard() {
     toast.info("Удалено");
   };
 
-  const change = (e) => i18n.changeLanguage(e.target.value)
+  const change = (e) => i18n.changeLanguage(e.target.value);
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('userRole');
+    localStorage.removeItem('isLoggedIn');
+    
+    window.dispatchEvent(new Event('userChange'));
+    
+    toast.info("Вы вышли из системы");
+    navigate('/'); // Теперь это сработает
+  };
 
   return (
     <div className="teacher-container">
@@ -60,11 +84,14 @@ function TeacherDashboard() {
         </div>
         
         <nav className="teacher-nav">
+          {/* Кнопка выхода с вашим классом */}
+          <button className='logout-btn' onClick={handleLogout}>{t("out") || "Выйти"}</button>
+          
           <button className={`nav-item ${activeTab === 'dashboard' ? 'active' : ''}`} onClick={() => setActiveTab('dashboard')}>📊 {t("dashboard")}</button>
           <button className={`nav-item ${activeTab === 'courses' ? 'active' : ''}`} onClick={() => setActiveTab('courses')}>📚 {t("courses")}</button>
           <button className="nav-item">💬 {t("msg")}</button>
 
-          <select onChange={change}>
+          <select className="lang-select" onChange={change}>
             <option value="ru">RUS</option>
             <option value="kg">KGZ</option>
           </select>
@@ -114,73 +141,40 @@ function TeacherDashboard() {
             </div>
           </div>
         ) : (
-
-          
           <div className="tab-content animate-fade">
             <h1>{t("course")}</h1>
+            <section className="input-section card">
+              <h2>{t("add1")}</h2>
+              <form onSubmit={addCourse} className="course-form-row">
+                <input className='courseInput' type="text" placeholder="Название темы..." value={courseData.title} onChange={(e) => setCourseData({...courseData, title: e.target.value})} />
+                <input className='courseInput' type="text" placeholder="Ссылка..." value={courseData.link} onChange={(e) => setCourseData({...courseData, link: e.target.value})} />
+                <button type="submit" className="saveCourse">{t("save")}</button>
+              </form>
+            </section>
 
-  {/* Форма добавления курса */}
-  <section className="input-section card">
-    <h2>{t("add1")}</h2>
-    <form onSubmit={addCourse} className="course-form-row">
-      <input className='courseInput'
-        type="text" 
-        placeholder="Название темы (напр. Логарифмы)" 
-        value={courseData.title} 
-        onChange={(e) => setCourseData({...courseData, title: e.target.value})} 
-      />
-      <input className='courseInput'
-        type="text" 
-        placeholder="Ссылка на YouTube / Drive" 
-        value={courseData.link} 
-        onChange={(e) => setCourseData({...courseData, link: e.target.value})} 
-      />
-      <button type="submit" className="saveCourse">{t("save")}</button>
-    </form>
-  </section>
-
-  {/* Таблица курсов в стиле Excel */}
-  <section className="history-section excel-card">
-    <div className="excel-header">
-      <h2>📋 {t("courseList")}</h2>
-      <span className="count-label">{t("material")}: {courses.length}</span>
-    </div>
-    
-    <div className="excel-table-wrapper">
-      {courses.length === 0 ? (
-        <div className="empty-state">
-          <p>{t("material1")}</p>
-        </div>
-      ) : (
-        <table className="excel-table">
-          <thead>
-            <tr>
-              <th style={{width: '50px'}}>№</th>
-              <th>{t("theme")}</th>
-              <th>{t("link")}</th>
-              <th style={{width: '120px'}}>{t("motion")}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {courses.map((course, index) => (
-              <tr key={course.id}>
-                <td className="idx">{index + 1}</td>
-                <td className="topic-name">{course.title}</td>
-                <td className="link-cell">
-                  <a href={course.link} target="_blank" rel="noopener noreferrer" className="table-link">
-                    🔗 {t("viaLink")}
-                  </a>
-                </td>
-                <td>
-                  <button onClick={() => deleteCourse(course.id)} className="excel-del-btn">{t("delete")}</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-    </div>
-  </section>
+            <section className="history-section excel-card">
+              <div className="excel-header">
+                <h2>📋 {t("courseList")}</h2>
+                <span className="count-label">{t("material")}: {courses.length}</span>
+              </div>
+              <div className="excel-table-wrapper">
+                {courses.length === 0 ? <p className="empty-p">{t("material1")}</p> : (
+                  <table className="excel-table">
+                    <thead><tr><th>№</th><th>{t("theme")}</th><th>{t("link")}</th><th>{t("motion")}</th></tr></thead>
+                    <tbody>
+                      {courses.map((course, index) => (
+                        <tr key={course.id}>
+                          <td>{index + 1}</td>
+                          <td className="topic-name">{course.title}</td>
+                          <td className="link-cell"><a href={course.link} target="_blank" rel="noopener noreferrer">🔗 {t("viaLink")}</a></td>
+                          <td><button onClick={() => deleteCourse(course.id)} className="excel-del-btn">{t("delete")}</button></td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                )}
+              </div>
+            </section>
           </div>
         )}
       </main>

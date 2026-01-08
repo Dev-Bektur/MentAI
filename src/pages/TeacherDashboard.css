@@ -55,7 +55,7 @@
 }
 
 .nav-item {
-    padding: 8px 16px;
+    padding: 1px 16px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background: white;
@@ -611,4 +611,32 @@ select{
     .animate-fade{
         margin-top: 130px;
     }
+}
+
+.logout-btn {
+    width: 60px;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #fee2e2; /* Светло-красный фон */
+    color: #dc2626; /* Красный текст */
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.logout-btn:hover {
+    background-color: #dc2626;
+    color: white;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+    transform: translateY(-1px);
+}
+
+.logout-btn:active {
+    transform: translateY(0);
 }

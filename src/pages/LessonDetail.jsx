@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './LessonDetail.css'
 
@@ -28,9 +29,9 @@ function LessonDetail() {
           Не понял тему
         </button>
         
-        <button className='toHw' onClick={() => alert(`Переход к ДЗ урока №${id}`)}>
+        <Link to="/totheH"><button className='toHw' onClick={() => alert(`Переход к ДЗ урока №${id}`)}>
           Перейти к ДЗ
-        </button>
+        </button></Link>
       </div>
     </div>
   );

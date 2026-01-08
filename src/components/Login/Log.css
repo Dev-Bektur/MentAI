@@ -85,6 +85,58 @@
     padding: 5px;
 }
 
+.whiteLog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.loginPage {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn1 {
+    width: 100%;
+    padding: 12px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn1:disabled {
+    background: #94a3b8;
+}
+
+.btn2-text {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #64748b;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn2-text:hover {
+    color: #2563eb;
+}
+
 /* --- ADAPTIVE --- */
 
 @media (max-width: 768px) {
